@@ -1,0 +1,121 @@
+{
+  "site": {
+    "title": "UtilBoxx - Ferramentas Online Grátis",
+    "description": "Ferramentas online gratuitas para PDF, imagem, texto, conversão de unidades, cor, criptografia e desenvolvedores. Rápido, seguro, sem cadastro.",
+    "keywords": "ferramentas online, ferramentas grátis, ferramentas PDF, ferramentas imagem, conversor unidades",
+    "tagline": "Todas as ferramentas que você precisa, em um só lugar"
+  },
+  "nav": {
+    "home": "Início",
+    "tools": "Ferramentas",
+    "about": "Sobre",
+    "privacy": "Privacidade"
+  },
+  "home": {
+    "hero_title": "Ferramentas Online Grátis para Todos",
+    "hero_subtitle": "PDF, imagem, texto, unidades, cor e ferramentas para desenvolvedores. 100% grátis, sem cadastro, tudo processado no seu navegador.",
+    "features_title": "Todas as Ferramentas",
+    "features_subtitle": "Escolha da nossa crescente coleção de ferramentas online gratuitas",
+    "cta": "Começar",
+    "categories": [
+      { "title": "Ferramentas PDF", "description": "Mesclar, dividir, comprimir, converter PDF" },
+      { "title": "Ferramentas de Imagem", "description": "Comprimir, redimensionar, recortar, converter imagens" },
+      { "title": "Ferramentas de Texto", "description": "Contar, formatar, transformar texto" },
+      { "title": "Conversores de Unidades", "description": "Converter comprimento, peso, temperatura e mais" },
+      { "title": "Ferramentas de Cor", "description": "Escolher cores, converter formatos, gerar paletas" },
+      { "title": "Ferramentas Cripto", "description": "Hash, codificar, decodificar, gerar UUID" },
+      { "title": "Ferramentas de Desenvolvedor", "description": "Formatador JSON, conversor timestamp, códigos QR" }
+    ]
+  },
+  "tools": {
+    "category": {
+      "pdf": "Ferramentas PDF",
+      "image": "Ferramentas de Imagem",
+      "text": "Ferramentas de Texto",
+      "unit": "Conversores de Unidades",
+      "color": "Ferramentas de Cor",
+      "crypto": "Ferramentas Cripto",
+      "dev": "Ferramentas de Desenvolvedor"
+    },
+    "pdf": {
+      "merge": "Mesclar PDF",
+      "split": "Dividir PDF",
+      "compress": "Comprimir PDF",
+      "toImage": "PDF para Imagem",
+      "imageToPdf": "Imagem para PDF",
+      "addWatermark": "Adicionar Marca D'água",
+      "rotate": "Girar PDF",
+      "extractImages": "Extrair Imagens",
+      "extractText": "Extrair Texto",
+      "reorder": "Reordenar Páginas"
+    },
+    "image": {
+      "compress": "Comprimir Imagem",
+      "resize": "Redimensionar",
+      "crop": "Recortar",
+      "convert": "Converter Formato",
+      "addWatermark": "Marca D'água"
+    },
+    "text": {
+      "charCount": "Contar Caracteres",
+      "caseConvert": "Converter Maiúsculas",
+      "duplicate": "Remover Duplicados",
+      "diff": "Comparar Texto",
+      "regex": "Testador Regex"
+    },
+    "unit": {
+      "length": "Comprimento",
+      "weight": "Peso",
+      "temperature": "Temperatura",
+      "area": "Área",
+      "volume": "Volume",
+      "speed": "Velocidade",
+      "data": "Armazenamento",
+      "time": "Tempo"
+    },
+    "color": {
+      "picker": "Seletor de Cor",
+      "hexToRgb": "Conversor HEX/RGB",
+      "palette": "Gerador de Paleta"
+    },
+    "crypto": {
+      "hash": "Gerador de Hash",
+      "base64": "Codificar/Decodificar Base64",
+      "urlEncode": "Codificar/Decodificar URL",
+      "uuid": "Gerador UUID"
+    },
+    "dev": {
+      "jsonFormat": "Formatador JSON",
+      "timestamp": "Conversor Timestamp",
+      "qrcode": "Gerador QR",
+      "password": "Gerador de Senha"
+    }
+  },
+  "common": {
+    "upload": "Enviar",
+    "download": "Baixar",
+    "process": "Processar",
+    "reset": "Redefinir",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "input": "Entrada",
+    "output": "Saída",
+    "result": "Resultado",
+    "options": "Opções",
+    "error": "Erro",
+    "success": "Sucesso",
+    "loading": "Carregando..."
+  },
+  "ui": {
+    "choose_file": "Escolher arquivo",
+    "drop_file_here": "Solte o arquivo aqui",
+    "or": "ou",
+    "paste_text": "Cole o texto aqui",
+    "type_text": "Digite ou cole seu texto",
+    "select_option": "Selecione uma opção"
+  },
+  "footer": {
+    "copyright": "© 2026 UtilBoxx. Todos os direitos reservados.",
+    "made_with": "Feito com carinho para a comunidade global"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "site": {
+    "title": "UtilBoxx - Kostenlose Online-Tools",
+    "description": "Kostenlose Online-Tools für PDF, Bild, Text, Einheitenumrechnung, Farbe, Verschlüsselung und Entwickler. Schnell, sicher, ohne Anmeldung.",
+    "keywords": "Online-Tools, kostenlose Tools, PDF-Tools, Bild-Tools, Einheitenumrechner, Text-Tools",
+    "tagline": "Alle Tools, die Sie brauchen, an einem Ort"
+  },
+  "nav": {
+    "home": "Startseite",
+    "tools": "Tools",
+    "about": "Über uns",
+    "privacy": "Datenschutz"
+  },
+  "home": {
+    "hero_title": "Kostenlose Online-Tools für Alle",
+    "hero_subtitle": "PDF, Bild, Text, Einheiten, Farbe und Entwicklertools. 100% kostenlos, keine Anmeldung, alles im Browser verarbeitet.",
+    "features_title": "Alle Tools",
+    "features_subtitle": "Wählen Sie aus unserer wachsenden Sammlung kostenloser Online-Tools",
+    "cta": "Loslegen",
+    "categories": [
+      { "title": "PDF-Tools", "description": "PDF-Dateien zusammenführen, teilen, komprimieren, konvertieren" },
+      { "title": "Bild-Tools", "description": "Bilder komprimieren, skalieren, zuschneiden, konvertieren" },
+      { "title": "Text-Tools", "description": "Text zählen, formatieren, umwandeln" },
+      { "title": "Einheitenumrechner", "description": "Länge, Gewicht, Temperatur und mehr umrechnen" },
+      { "title": "Farb-Tools", "description": "Farben auswählen, Formate konvertieren, Paletten generieren" },
+      { "title": "Krypto-Tools", "description": "Hash, kodieren, dekodieren, UUID generieren" },
+      { "title": "Entwickler-Tools", "description": "JSON-Formatierer, Zeitstempel-Konverter, QR-Codes" }
+    ]
+  },
+  "tools": {
+    "category": {
+      "pdf": "PDF-Tools",
+      "image": "Bild-Tools",
+      "text": "Text-Tools",
+      "unit": "Einheitenumrechner",
+      "color": "Farb-Tools",
+      "crypto": "Krypto-Tools",
+      "dev": "Entwickler-Tools"
+    },
+    "pdf": {
+      "merge": "PDF zusammenführen",
+      "split": "PDF teilen",
+      "compress": "PDF komprimieren",
+      "toImage": "PDF zu Bild",
+      "imageToPdf": "Bild zu PDF",
+      "addWatermark": "Wasserzeichen hinzufügen",
+      "rotate": "PDF drehen",
+      "extractImages": "Bilder extrahieren",
+      "extractText": "Text extrahieren",
+      "reorder": "Seiten neu anordnen"
+    },
+    "image": {
+      "compress": "Bild komprimieren",
+      "resize": "Bild skalieren",
+      "crop": "Bild zuschneiden",
+      "convert": "Format konvertieren",
+      "addWatermark": "Wasserzeichen"
+    },
+    "text": {
+      "charCount": "Zeichen zählen",
+      "caseConvert": "Groß-/Kleinschreibung",
+      "duplicate": "Duplikate entfernen",
+      "diff": "Text vergleichen",
+      "regex": "Regex-Tester"
+    },
+    "unit": {
+      "length": "Länge",
+      "weight": "Gewicht",
+      "temperature": "Temperatur",
+      "area": "Fläche",
+      "volume": "Volumen",
+      "speed": "Geschwindigkeit",
+      "data": "Datenspeicher",
+      "time": "Zeit"
+    },
+    "color": {
+      "picker": "Farbwähler",
+      "hexToRgb": "HEX/RGB-Konverter",
+      "palette": "Palettengenerator"
+    },
+    "crypto": {
+      "hash": "Hash-Generator",
+      "base64": "Base64 kodieren/dekodieren",
+      "urlEncode": "URL kodieren/dekodieren",
+      "uuid": "UUID-Generator"
+    },
+    "dev": {
+      "jsonFormat": "JSON-Formatierer",
+      "timestamp": "Zeitstempel-Konverter",
+      "qrcode": "QR-Code-Generator",
+      "password": "Passwort-Generator"
+    }
+  },
+  "common": {
+    "upload": "Hochladen",
+    "download": "Herunterladen",
+    "process": "Verarbeiten",
+    "reset": "Zurücksetzen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "input": "Eingabe",
+    "output": "Ausgabe",
+    "result": "Ergebnis",
+    "options": "Optionen",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "loading": "Wird geladen..."
+  },
+  "ui": {
+    "choose_file": "Datei wählen",
+    "drop_file_here": "Datei hier ablegen",
+    "or": "oder",
+    "paste_text": "Text hier einfügen",
+    "type_text": "Text eingeben oder einfügen",
+    "select_option": "Option wählen"
+  },
+  "footer": {
+    "copyright": "© 2026 UtilBoxx. Alle Rechte vorbehalten.",
+    "made_with": "Mit Sorgfalt für die globale Gemeinschaft"
+  }
+}

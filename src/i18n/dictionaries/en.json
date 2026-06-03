@@ -1,0 +1,121 @@
+{
+  "site": {
+    "title": "UtilBoxx - Free Online Tools",
+    "description": "Free online tools for PDF, image, text, unit conversion, color, crypto, and developers. Fast, secure, no signup required.",
+    "keywords": "online tools, free tools, PDF tools, image tools, unit converter, text tools",
+    "tagline": "All the tools you need, in one place"
+  },
+  "nav": {
+    "home": "Home",
+    "tools": "Tools",
+    "about": "About",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "hero_title": "Free Online Tools for Everyone",
+    "hero_subtitle": "PDF, image, text, units, color, and developer tools. 100% free, no signup, all processed in your browser.",
+    "features_title": "All Tools",
+    "features_subtitle": "Choose from our growing collection of free online tools",
+    "cta": "Start Using",
+    "categories": [
+      { "title": "PDF Tools", "description": "Merge, split, compress, convert PDF files" },
+      { "title": "Image Tools", "description": "Compress, resize, crop, convert images" },
+      { "title": "Text Tools", "description": "Count, format, transform text" },
+      { "title": "Unit Converters", "description": "Convert length, weight, temperature, and more" },
+      { "title": "Color Tools", "description": "Pick colors, convert formats, generate palettes" },
+      { "title": "Crypto Tools", "description": "Hash, encode, decode, generate UUIDs" },
+      { "title": "Developer Tools", "description": "JSON formatter, timestamp converter, QR codes" }
+    ]
+  },
+  "tools": {
+    "category": {
+      "pdf": "PDF Tools",
+      "image": "Image Tools",
+      "text": "Text Tools",
+      "unit": "Unit Converters",
+      "color": "Color Tools",
+      "crypto": "Crypto Tools",
+      "dev": "Developer Tools"
+    },
+    "pdf": {
+      "merge": "Merge PDF",
+      "split": "Split PDF",
+      "compress": "Compress PDF",
+      "toImage": "PDF to Image",
+      "imageToPdf": "Image to PDF",
+      "addWatermark": "Add Watermark",
+      "rotate": "Rotate PDF",
+      "extractImages": "Extract Images",
+      "extractText": "Extract Text",
+      "reorder": "Reorder Pages"
+    },
+    "image": {
+      "compress": "Compress Image",
+      "resize": "Resize Image",
+      "crop": "Crop Image",
+      "convert": "Convert Image",
+      "addWatermark": "Add Watermark"
+    },
+    "text": {
+      "charCount": "Character Count",
+      "caseConvert": "Case Converter",
+      "duplicate": "Remove Duplicates",
+      "diff": "Text Diff",
+      "regex": "Regex Tester"
+    },
+    "unit": {
+      "length": "Length",
+      "weight": "Weight",
+      "temperature": "Temperature",
+      "area": "Area",
+      "volume": "Volume",
+      "speed": "Speed",
+      "data": "Data Storage",
+      "time": "Time"
+    },
+    "color": {
+      "picker": "Color Picker",
+      "hexToRgb": "HEX/RGB Converter",
+      "palette": "Palette Generator"
+    },
+    "crypto": {
+      "hash": "Hash Generator",
+      "base64": "Base64 Encode/Decode",
+      "urlEncode": "URL Encode/Decode",
+      "uuid": "UUID Generator"
+    },
+    "dev": {
+      "jsonFormat": "JSON Formatter",
+      "timestamp": "Timestamp Converter",
+      "qrcode": "QR Code Generator",
+      "password": "Password Generator"
+    }
+  },
+  "common": {
+    "upload": "Upload",
+    "download": "Download",
+    "process": "Process",
+    "reset": "Reset",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "input": "Input",
+    "output": "Output",
+    "result": "Result",
+    "options": "Options",
+    "error": "Error",
+    "success": "Success",
+    "loading": "Loading..."
+  },
+  "ui": {
+    "choose_file": "Choose file",
+    "drop_file_here": "Drop file here",
+    "or": "or",
+    "paste_text": "Paste text here",
+    "type_text": "Type or paste your text",
+    "select_option": "Select an option"
+  },
+  "footer": {
+    "copyright": "© 2026 UtilBoxx. All rights reserved.",
+    "made_with": "Made with care for the global community"
+  }
+}
