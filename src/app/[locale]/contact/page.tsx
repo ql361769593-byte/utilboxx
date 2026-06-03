@@ -1,15 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { type Locale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/dictionaries";
 import { Mail, Clock, MessageCircle, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage({ params }: { params: { locale: Locale } }) {
   const [dict, setDict] = useState<any>(null);
 
-  useState(() => {
+  useEffect(() => {
     import(`@/i18n/dictionaries/${params.locale}.json`).then((m) => setDict(m.default));
-  });
+  }, [params.locale]);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
