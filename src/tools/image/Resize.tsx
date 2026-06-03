@@ -13,7 +13,7 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="text-sm font-medium block mb-1">Width (px)</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.width} (px)</label>
           <input
             type="number"
             value={width}
@@ -27,7 +27,7 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
           />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Height (px)</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.height} (px)</label>
           <input
             type="number"
             value={height}
@@ -47,7 +47,7 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
           checked={keepRatio}
           onChange={(e) => setKeepRatio(e.target.checked)}
         />
-        Keep aspect ratio
+        {dict.ui.keep_ratio}
       </label>
       <FileTool
         dict={dict}
@@ -66,12 +66,13 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
           const canvas = document.createElement("canvas");
           canvas.width = width;
           canvas.height = height;
-          const ctx = canvas.getContext("2d")!;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) return;
           ctx.drawImage(img, 0, 0, width, height);
-          const blob: Blob = await new Promise((res) =>
-            canvas.toBlob((b) => res(b!), "image/png")!
+          const blob: Blob | null = await new Promise((res) =>
+            canvas.toBlob((b) => res(b), "image/png")
           );
-          downloadBlob(blob, `resized-${file.name}`);
+          if (blob) downloadBlob(blob, `resized-${file.name}`);
           URL.revokeObjectURL(url);
         }}
       />

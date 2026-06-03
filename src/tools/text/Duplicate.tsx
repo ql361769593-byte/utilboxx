@@ -34,11 +34,11 @@ export default function RemoveDuplicates({ dict }: { dict: Dictionary }) {
       <div className="flex flex-wrap gap-4 text-sm">
         <label className="flex items-center gap-2">
           <input type="checkbox" checked={caseSensitive} onChange={(e) => setCaseSensitive(e.target.checked)} />
-          Case sensitive
+          {dict.ui.case_sensitive}
         </label>
         <label className="flex items-center gap-2">
           <input type="checkbox" checked={keepEmpty} onChange={(e) => setKeepEmpty(e.target.checked)} />
-          Keep empty lines
+          {dict.ui.keep_empty}
         </label>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -53,7 +53,7 @@ export default function RemoveDuplicates({ dict }: { dict: Dictionary }) {
           </div>
           <textarea value={result.text} readOnly rows={12} className="w-full px-4 py-3 border border-slate-300 rounded-lg font-mono text-sm bg-slate-50" />
           {result.removed > 0 && (
-            <p className="text-sm text-green-600 mt-2">✓ Removed {result.removed} duplicate(s)</p>
+            <p className="text-sm text-green-600 mt-2">✓ {dict.common.success}: {result.removed}</p>
           )}
         </div>
       </div>

@@ -18,13 +18,34 @@
     "features_subtitle": "Wählen Sie aus unserer wachsenden Sammlung kostenloser Online-Tools",
     "cta": "Loslegen",
     "categories": [
-      { "title": "PDF-Tools", "description": "PDF-Dateien zusammenführen, teilen, komprimieren, konvertieren" },
-      { "title": "Bild-Tools", "description": "Bilder komprimieren, skalieren, zuschneiden, konvertieren" },
-      { "title": "Text-Tools", "description": "Text zählen, formatieren, umwandeln" },
-      { "title": "Einheitenumrechner", "description": "Länge, Gewicht, Temperatur und mehr umrechnen" },
-      { "title": "Farb-Tools", "description": "Farben auswählen, Formate konvertieren, Paletten generieren" },
-      { "title": "Krypto-Tools", "description": "Hash, kodieren, dekodieren, UUID generieren" },
-      { "title": "Entwickler-Tools", "description": "JSON-Formatierer, Zeitstempel-Konverter, QR-Codes" }
+      {
+        "title": "PDF-Tools",
+        "description": "PDF-Dateien zusammenführen, teilen, komprimieren, konvertieren"
+      },
+      {
+        "title": "Bild-Tools",
+        "description": "Bilder komprimieren, skalieren, zuschneiden, konvertieren"
+      },
+      {
+        "title": "Text-Tools",
+        "description": "Text zählen, formatieren, umwandeln"
+      },
+      {
+        "title": "Einheitenumrechner",
+        "description": "Länge, Gewicht, Temperatur und mehr umrechnen"
+      },
+      {
+        "title": "Farb-Tools",
+        "description": "Farben auswählen, Formate konvertieren, Paletten generieren"
+      },
+      {
+        "title": "Krypto-Tools",
+        "description": "Hash, kodieren, dekodieren, UUID generieren"
+      },
+      {
+        "title": "Entwickler-Tools",
+        "description": "JSON-Formatierer, Zeitstempel-Konverter, QR-Codes"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "Optionen",
     "error": "Fehler",
     "success": "Erfolg",
-    "loading": "Wird geladen..."
+    "loading": "Wird geladen...",
+    "swap": "Tauschen",
+    "now": "Jetzt"
   },
   "ui": {
     "choose_file": "Datei wählen",
@@ -112,7 +135,67 @@
     "or": "oder",
     "paste_text": "Text hier einfügen",
     "type_text": "Text eingeben oder einfügen",
-    "select_option": "Option wählen"
+    "select_option": "Option wählen",
+    "format": "Format",
+    "width": "Breite",
+    "height": "Höhe",
+    "x": "X",
+    "y": "Y",
+    "quality": "Qualität",
+    "size": "Größe",
+    "opacity": "Deckkraft",
+    "rotation": "Drehung",
+    "position": "Position",
+    "indent": "Einrückung",
+    "spaces": "Leerzeichen",
+    "spaces_2": "2 Leerzeichen",
+    "spaces_4": "4 Leerzeichen",
+    "minified": "Minifiziert",
+    "foreground": "Vordergrund",
+    "background": "Hintergrund",
+    "count": "Anzahl",
+    "length": "Länge",
+    "case_sensitive": "Groß-/Kleinschreibung",
+    "keep_empty": "Leere Zeilen behalten",
+    "keep_ratio": "Seitenverhältnis beibehalten",
+    "watermark_text": "Wasserzeichen-Text",
+    "output_format": "Ausgabeformat",
+    "base_hue": "Grundton",
+    "scheme": "Schema",
+    "scheme_analogous": "Analog",
+    "scheme_complementary": "Komplementär",
+    "scheme_triadic": "Triadisch",
+    "scheme_tetradic": "Tetradisch",
+    "scheme_monochromatic": "Monochromatisch",
+    "pos_tl": "Oben links",
+    "pos_tr": "Oben rechts",
+    "pos_bl": "Unten links",
+    "pos_br": "Unten rechts",
+    "pos_center": "Mitte",
+    "version": "Version",
+    "v4": "v4 (zufällig)",
+    "v1": "v1 (Zeitstempel)",
+    "generate": "Generieren",
+    "exclude": "Zeichen ausschließen",
+    "very_weak": "Sehr schwach",
+    "weak": "Schwach",
+    "fair": "Ausreichend",
+    "good": "Gut",
+    "strong": "Stark",
+    "remove_duplicates": "Duplikate entfernen",
+    "now_s": "Jetzt (s)",
+    "now_ms": "Jetzt (ms)",
+    "epoch": "Epoche (0)",
+    "text_a": "Text A",
+    "text_b": "Text B",
+    "pattern": "Muster",
+    "flags": "Flags",
+    "test_text": "Testtext",
+    "unix_timestamp": "Unix-Zeitstempel (Sekunden)",
+    "date_string": "Datums-String",
+    "tool_not_found": "Tool nicht gefunden",
+    "tools_count": "Tools",
+    "page_x_of_y": "Seite"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. Alle Rechte vorbehalten.",

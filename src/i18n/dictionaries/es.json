@@ -18,13 +18,34 @@
     "features_subtitle": "Elige entre nuestra creciente colección de herramientas online gratuitas",
     "cta": "Empezar",
     "categories": [
-      { "title": "Herramientas PDF", "description": "Combinar, dividir, comprimir, convertir PDF" },
-      { "title": "Herramientas de Imagen", "description": "Comprimir, redimensionar, recortar, convertir imágenes" },
-      { "title": "Herramientas de Texto", "description": "Contar, formatear, transformar texto" },
-      { "title": "Conversores de Unidades", "description": "Convertir longitud, peso, temperatura y más" },
-      { "title": "Herramientas de Color", "description": "Elegir colores, convertir formatos, generar paletas" },
-      { "title": "Herramientas Cripto", "description": "Hash, codificar, decodificar, generar UUID" },
-      { "title": "Herramientas de Desarrollador", "description": "Formateador JSON, conversor timestamp, códigos QR" }
+      {
+        "title": "Herramientas PDF",
+        "description": "Combinar, dividir, comprimir, convertir PDF"
+      },
+      {
+        "title": "Herramientas de Imagen",
+        "description": "Comprimir, redimensionar, recortar, convertir imágenes"
+      },
+      {
+        "title": "Herramientas de Texto",
+        "description": "Contar, formatear, transformar texto"
+      },
+      {
+        "title": "Conversores de Unidades",
+        "description": "Convertir longitud, peso, temperatura y más"
+      },
+      {
+        "title": "Herramientas de Color",
+        "description": "Elegir colores, convertir formatos, generar paletas"
+      },
+      {
+        "title": "Herramientas Cripto",
+        "description": "Hash, codificar, decodificar, generar UUID"
+      },
+      {
+        "title": "Herramientas de Desarrollador",
+        "description": "Formateador JSON, conversor timestamp, códigos QR"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "Opciones",
     "error": "Error",
     "success": "Éxito",
-    "loading": "Cargando..."
+    "loading": "Cargando...",
+    "swap": "Intercambiar",
+    "now": "Ahora"
   },
   "ui": {
     "choose_file": "Elegir archivo",
@@ -112,7 +135,67 @@
     "or": "o",
     "paste_text": "Pega el texto aquí",
     "type_text": "Escribe o pega tu texto",
-    "select_option": "Selecciona una opción"
+    "select_option": "Selecciona una opción",
+    "format": "Formato",
+    "width": "Ancho",
+    "height": "Alto",
+    "x": "X",
+    "y": "Y",
+    "quality": "Calidad",
+    "size": "Tamaño",
+    "opacity": "Opacidad",
+    "rotation": "Rotación",
+    "position": "Posición",
+    "indent": "Indentación",
+    "spaces": "espacios",
+    "spaces_2": "2 espacios",
+    "spaces_4": "4 espacios",
+    "minified": "Minificado",
+    "foreground": "Primer plano",
+    "background": "Fondo",
+    "count": "Cantidad",
+    "length": "Longitud",
+    "case_sensitive": "Distinguir mayúsculas",
+    "keep_empty": "Mantener líneas vacías",
+    "keep_ratio": "Mantener relación de aspecto",
+    "watermark_text": "Texto de marca de agua",
+    "output_format": "Formato de salida",
+    "base_hue": "Tono base",
+    "scheme": "Esquema",
+    "scheme_analogous": "Análoga",
+    "scheme_complementary": "Complementaria",
+    "scheme_triadic": "Triádica",
+    "scheme_tetradic": "Tetrádica",
+    "scheme_monochromatic": "Monocromática",
+    "pos_tl": "Arriba izquierda",
+    "pos_tr": "Arriba derecha",
+    "pos_bl": "Abajo izquierda",
+    "pos_br": "Abajo derecha",
+    "pos_center": "Centro",
+    "version": "Versión",
+    "v4": "v4 (aleatorio)",
+    "v1": "v1 (timestamp)",
+    "generate": "Generar",
+    "exclude": "Excluir caracteres",
+    "very_weak": "Muy débil",
+    "weak": "Débil",
+    "fair": "Regular",
+    "good": "Buena",
+    "strong": "Fuerte",
+    "remove_duplicates": "Eliminar Duplicados",
+    "now_s": "Ahora (s)",
+    "now_ms": "Ahora (ms)",
+    "epoch": "Época (0)",
+    "text_a": "Texto A",
+    "text_b": "Texto B",
+    "pattern": "Patrón",
+    "flags": "Banderas",
+    "test_text": "Texto de prueba",
+    "unix_timestamp": "Timestamp Unix (segundos)",
+    "date_string": "Cadena de fecha",
+    "tool_not_found": "Herramienta no encontrada",
+    "tools_count": "herramientas",
+    "page_x_of_y": "Página"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. Todos los derechos reservados.",

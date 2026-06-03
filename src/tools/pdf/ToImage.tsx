@@ -8,7 +8,7 @@ export default function PdfToImage({ dict }: { dict: Dictionary }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-4 text-sm">
-        <label className="font-medium">Format:</label>
+        <label className="font-medium">{dict.ui.format}:</label>
         <select
           value={format}
           onChange={(e) => setFormat(e.target.value as "png" | "jpeg")}
@@ -34,12 +34,13 @@ export default function PdfToImage({ dict }: { dict: Dictionary }) {
             const canvas = document.createElement("canvas");
             canvas.width = vp.width;
             canvas.height = vp.height;
-            const ctx = canvas.getContext("2d")!;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) continue;
             await page.render({ canvasContext: ctx, viewport: vp, canvas } as any).promise;
-            const blob: Blob = await new Promise((res) =>
-              canvas.toBlob((b) => res(b!), format === "png" ? "image/png" : "image/jpeg")!
+            const blob: Blob | null = await new Promise((res) =>
+              canvas.toBlob((b) => res(b), format === "png" ? "image/png" : "image/jpeg")
             );
-            downloadBlob(blob, `${file.name.replace(".pdf", "")}-${i}.${format === "png" ? "png" : "jpg"}`);
+            if (blob) downloadBlob(blob, `${file.name.replace(".pdf", "")}-${i}.${format === "png" ? "png" : "jpg"}`);
           }
         }}
       />

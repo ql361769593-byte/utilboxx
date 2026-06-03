@@ -7,11 +7,9 @@ export type Unit = { name: string; factor: number; offset?: number };
 export function UnitConverter({
   units,
   dict,
-  title,
 }: {
   units: Unit[];
   dict: Dictionary;
-  title?: string;
 }) {
   const baseUnit = units[0];
   const [fromUnit, setFromUnit] = useState(baseUnit);
@@ -22,12 +20,10 @@ export function UnitConverter({
   const convert = (val: string, from: Unit, to: Unit) => {
     const n = parseFloat(val);
     if (isNaN(n)) return "";
-    // 温度特殊处理
     if (from.offset !== undefined && to.offset !== undefined) {
       const celsius = n + from.offset;
       return (celsius - to.offset).toString();
     }
-    // 通用：base -> from -> base -> to
     const baseVal = n * from.factor;
     return (baseVal / to.factor).toString();
   };
@@ -49,7 +45,6 @@ export function UnitConverter({
 
   return (
     <div className="space-y-4">
-      {title && <p className="text-sm text-slate-600">{title}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-3 items-end">
         <UnitInput
           label={dict.common.input}
@@ -60,9 +55,10 @@ export function UnitConverter({
           onChange={handleFromChange}
         />
         <button
+          type="button"
           onClick={swap}
           className="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded transition h-[42px]"
-          title="Swap"
+          title={dict.common.swap}
         >
           ⇄
         </button>

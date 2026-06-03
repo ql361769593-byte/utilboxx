@@ -9,7 +9,9 @@ export default function RotatePdf({ dict }: { dict: Dictionary }) {
   return (
     <div className="space-y-4">
       <div>
-        <label className="text-sm font-medium block mb-1">Rotation: {angle}°</label>
+        <label className="text-sm font-medium block mb-1">
+          {dict.ui.rotation}: {angle}°
+        </label>
         <select
           value={angle}
           onChange={(e) => setAngle(parseInt(e.target.value))}

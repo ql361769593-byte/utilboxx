@@ -23,21 +23,21 @@ export default function JsonFormat({ dict }: { dict: Dictionary }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
-        <label className="text-sm font-medium">Indent:</label>
+        <label className="text-sm font-medium">{dict.ui.indent}:</label>
         <select value={indent} onChange={(e) => setIndent(parseInt(e.target.value))} className="border border-slate-300 rounded px-3 py-1.5 text-sm">
-          <option value="2">2 spaces</option>
-          <option value="4">4 spaces</option>
-          <option value="0">Minified</option>
+          <option value="2">{dict.ui.spaces_2}</option>
+          <option value="4">{dict.ui.spaces_4}</option>
+          <option value="0">{dict.ui.minified}</option>
         </select>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>
-          <label className="text-sm font-medium block mb-2">Input JSON</label>
+          <label className="text-sm font-medium block mb-2">JSON</label>
           <TextArea value={input} onChange={setInput} rows={15} />
         </div>
         <div>
           <div className="flex justify-between items-center mb-2">
-            <label className="text-sm font-medium">Output</label>
+            <label className="text-sm font-medium">{dict.common.output}</label>
             {result && <CopyButton text={result} dict={dict} />}
           </div>
           <textarea value={result} readOnly rows={15} className="w-full px-4 py-3 border border-slate-300 rounded-lg font-mono text-sm bg-slate-50" />

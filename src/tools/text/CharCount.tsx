@@ -26,6 +26,11 @@ export default function CharCount({ dict }: { dict: Dictionary }) {
         <Stat label="Sentences" value={stats.sentences} />
         <Stat label="Bytes" value={stats.bytes} />
       </div>
+      {text && (
+        <div className="flex justify-end">
+          <CopyButton text={text} dict={dict} />
+        </div>
+      )}
     </div>
   );
 }

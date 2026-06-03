@@ -13,19 +13,19 @@ export default function CropImage({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div>
-          <label className="text-sm font-medium block mb-1">X</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.x}</label>
           <input type="number" value={x} onChange={(e) => setX(parseInt(e.target.value))} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Y</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.y}</label>
           <input type="number" value={y} onChange={(e) => setY(parseInt(e.target.value))} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Width</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.width}</label>
           <input type="number" value={w} onChange={(e) => setW(parseInt(e.target.value))} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Height</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.height}</label>
           <input type="number" value={h} onChange={(e) => setH(parseInt(e.target.value))} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
       </div>
@@ -45,12 +45,13 @@ export default function CropImage({ dict }: { dict: Dictionary }) {
           const canvas = document.createElement("canvas");
           canvas.width = w;
           canvas.height = h;
-          const ctx = canvas.getContext("2d")!;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) return;
           ctx.drawImage(img, x, y, w, h, 0, 0, w, h);
-          const blob: Blob = await new Promise((res) =>
-            canvas.toBlob((b) => res(b!), "image/png")!
+          const blob: Blob | null = await new Promise((res) =>
+            canvas.toBlob((b) => res(b), "image/png")
           );
-          downloadBlob(blob, `cropped-${file.name}`);
+          if (blob) downloadBlob(blob, `cropped-${file.name}`);
           URL.revokeObjectURL(url);
         }}
       />

@@ -13,7 +13,7 @@ export default async function ToolsPage({ params }: { params: { locale: Locale }
       <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
         {dict.home.features_title}
       </h1>
-      <p className="text-slate-600 mb-8">{tools.length} tools</p>
+      <p className="text-slate-600 mb-8">{tools.length} {dict.ui.tools_count}</p>
 
       <div className="flex flex-wrap gap-2 mb-8">
         {categoryKeys.map((c) => {

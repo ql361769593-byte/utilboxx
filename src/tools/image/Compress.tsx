@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
-import imageCompression from "browser-image-compression";
 
 export default function CompressImage({ dict }: { dict: Dictionary }) {
   const [quality, setQuality] = useState(0.7);
@@ -12,7 +11,7 @@ export default function CompressImage({ dict }: { dict: Dictionary }) {
       <div className="space-y-3">
         <div>
           <label className="text-sm font-medium block mb-1">
-            Quality: {(quality * 100).toFixed(0)}%
+            {dict.ui.quality}: {(quality * 100).toFixed(0)}%
           </label>
           <input
             type="range"
@@ -26,7 +25,7 @@ export default function CompressImage({ dict }: { dict: Dictionary }) {
         </div>
         <div>
           <label className="text-sm font-medium block mb-1">
-            Max size: {maxSize}MB
+            {dict.ui.size}: {maxSize}MB
           </label>
           <input
             type="range"
@@ -45,6 +44,7 @@ export default function CompressImage({ dict }: { dict: Dictionary }) {
         processButtonText={dict.tools.image.compress}
         onProcess={async (files) => {
           const file = files[0];
+          const imageCompression = (await import("browser-image-compression")).default;
           const compressed = await imageCompression(file, {
             maxSizeMB: maxSize,
             initialQuality: quality,

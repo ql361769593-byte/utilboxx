@@ -18,13 +18,34 @@
     "features_subtitle": "从我们不断丰富的免费在线工具中选择",
     "cta": "开始使用",
     "categories": [
-      { "title": "PDF 工具", "description": "合并、分割、压缩、转换 PDF 文件" },
-      { "title": "图片工具", "description": "压缩、调整大小、裁剪、转换图片" },
-      { "title": "文本工具", "description": "统计、格式化、转换文本" },
-      { "title": "单位换算", "description": "长度、重量、温度等换算" },
-      { "title": "颜色工具", "description": "取色、格式转换、生成色板" },
-      { "title": "加密工具", "description": "哈希、编码、解码、生成 UUID" },
-      { "title": "开发者工具", "description": "JSON 格式化、时间戳、QR 码" }
+      {
+        "title": "PDF 工具",
+        "description": "合并、分割、压缩、转换 PDF 文件"
+      },
+      {
+        "title": "图片工具",
+        "description": "压缩、调整大小、裁剪、转换图片"
+      },
+      {
+        "title": "文本工具",
+        "description": "统计、格式化、转换文本"
+      },
+      {
+        "title": "单位换算",
+        "description": "长度、重量、温度等换算"
+      },
+      {
+        "title": "颜色工具",
+        "description": "取色、格式转换、生成色板"
+      },
+      {
+        "title": "加密工具",
+        "description": "哈希、编码、解码、生成 UUID"
+      },
+      {
+        "title": "开发者工具",
+        "description": "JSON 格式化、时间戳、QR 码"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "选项",
     "error": "错误",
     "success": "成功",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "swap": "交换",
+    "now": "现在"
   },
   "ui": {
     "choose_file": "选择文件",
@@ -112,7 +135,67 @@
     "or": "或",
     "paste_text": "在此粘贴文本",
     "type_text": "输入或粘贴文本",
-    "select_option": "选择选项"
+    "select_option": "选择选项",
+    "format": "格式",
+    "width": "宽度",
+    "height": "高度",
+    "x": "X",
+    "y": "Y",
+    "quality": "质量",
+    "size": "大小",
+    "opacity": "不透明度",
+    "rotation": "旋转",
+    "position": "位置",
+    "indent": "缩进",
+    "spaces": "空格",
+    "spaces_2": "2 空格",
+    "spaces_4": "4 空格",
+    "minified": "压缩",
+    "foreground": "前景色",
+    "background": "背景色",
+    "count": "数量",
+    "length": "长度",
+    "case_sensitive": "区分大小写",
+    "keep_empty": "保留空行",
+    "keep_ratio": "保持宽高比",
+    "watermark_text": "水印文字",
+    "output_format": "输出格式",
+    "base_hue": "基础色相",
+    "scheme": "配色方案",
+    "scheme_analogous": "类比色",
+    "scheme_complementary": "互补色",
+    "scheme_triadic": "三色",
+    "scheme_tetradic": "四色",
+    "scheme_monochromatic": "单色",
+    "pos_tl": "左上",
+    "pos_tr": "右上",
+    "pos_bl": "左下",
+    "pos_br": "右下",
+    "pos_center": "居中",
+    "version": "版本",
+    "v4": "v4 (随机)",
+    "v1": "v1 (时间戳)",
+    "generate": "生成",
+    "exclude": "排除字符",
+    "very_weak": "极弱",
+    "weak": "弱",
+    "fair": "一般",
+    "good": "良好",
+    "strong": "强",
+    "remove_duplicates": "去除重复",
+    "now_s": "现在 (秒)",
+    "now_ms": "现在 (毫秒)",
+    "epoch": "Unix 起点 (0)",
+    "text_a": "文本 A",
+    "text_b": "文本 B",
+    "pattern": "正则表达式",
+    "flags": "标志",
+    "test_text": "测试文本",
+    "unix_timestamp": "Unix 时间戳（秒）",
+    "date_string": "日期字符串",
+    "tool_not_found": "未找到工具",
+    "tools_count": "个工具",
+    "page_x_of_y": "页"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. 保留所有权利。",

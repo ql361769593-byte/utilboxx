@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
-import { TextArea } from "@/components/UI";
+import { TextArea, CopyButton } from "@/components/UI";
 import type { Dictionary } from "@/i18n/types";
 
 export default function TextDiff({ dict }: { dict: Dictionary }) {
@@ -29,11 +29,11 @@ export default function TextDiff({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>
-          <label className="text-sm font-medium block mb-2">Text A</label>
+          <label className="text-sm font-medium block mb-2">{dict.ui.text_a}</label>
           <TextArea value={a} onChange={setA} rows={8} />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-2">Text B</label>
+          <label className="text-sm font-medium block mb-2">{dict.ui.text_b}</label>
           <TextArea value={b} onChange={setB} rows={8} />
         </div>
       </div>

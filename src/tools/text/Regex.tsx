@@ -36,7 +36,7 @@ export default function RegexTester({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="sm:col-span-2">
-          <label className="text-sm font-medium block mb-1">Pattern</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.pattern}</label>
           <input
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
@@ -45,7 +45,7 @@ export default function RegexTester({ dict }: { dict: Dictionary }) {
           />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Flags</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.flags}</label>
           <input
             value={flags}
             onChange={(e) => setFlags(e.target.value)}
@@ -56,12 +56,12 @@ export default function RegexTester({ dict }: { dict: Dictionary }) {
       </div>
       {error && <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded">⚠️ {error}</p>}
       <div>
-        <label className="text-sm font-medium block mb-1">Test text</label>
+        <label className="text-sm font-medium block mb-1">{dict.ui.test_text}</label>
         <TextArea value={text} onChange={setText} rows={8} />
       </div>
       {result.count > 0 && (
         <div className="space-y-2">
-          <p className="text-sm font-medium text-green-600">✓ {result.count} match(es) found</p>
+          <p className="text-sm font-medium text-green-600">✓ {result.count}</p>
           <div className="space-y-1 max-h-64 overflow-auto">
             {result.matches.map((m, i) => (
               <div key={i} className="bg-slate-50 rounded px-3 py-2 text-sm font-mono flex items-center justify-between">
@@ -70,7 +70,7 @@ export default function RegexTester({ dict }: { dict: Dictionary }) {
                   <span className="text-blue-700">{m.match}</span>
                 </span>
                 {m.groups.length > 0 && (
-                  <span className="text-xs text-slate-500">groups: [{m.groups.join(", ")}]</span>
+                  <span className="text-xs text-slate-500">[{m.groups.join(", ")}]</span>
                 )}
               </div>
             ))}

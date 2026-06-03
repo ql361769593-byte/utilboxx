@@ -16,7 +16,6 @@ export default function HexRgb({ dict }: { dict: Dictionary }) {
   const [b, setB] = useState(246);
 
   const validHex = useMemo(() => /^#[0-9A-Fa-f]{6}$/.test(hex), [hex]);
-  const fromHex = validHex ? hexToRgb(hex) : null;
 
   const setFromHex = (val: string) => {
     setHex(val);
@@ -83,9 +82,9 @@ export default function HexRgb({ dict }: { dict: Dictionary }) {
       </div>
       <div
         className="h-32 rounded-lg flex items-center justify-center text-white font-mono text-2xl shadow-inner"
-        style={{ background: hex }}
+        style={{ background: validHex ? hex : "#888" }}
       >
-        {hex}
+        {validHex ? hex : "—"}
       </div>
     </div>
   );

@@ -41,17 +41,19 @@ export default function Palette({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="text-sm font-medium block mb-1">Base hue: {baseHue}°</label>
+          <label className="text-sm font-medium block mb-1">
+            {dict.ui.base_hue}: {baseHue}°
+          </label>
           <input type="range" min="0" max="360" value={baseHue} onChange={(e) => setBaseHue(parseInt(e.target.value))} className="w-full" />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Scheme</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.scheme}</label>
           <select value={scheme} onChange={(e) => setScheme(e.target.value as any)} className="w-full border border-slate-300 rounded px-3 py-2">
-            <option value="analogous">Analogous</option>
-            <option value="complementary">Complementary</option>
-            <option value="triadic">Triadic</option>
-            <option value="tetradic">Tetradic</option>
-            <option value="monochromatic">Monochromatic</option>
+            <option value="analogous">{dict.ui.scheme_analogous}</option>
+            <option value="complementary">{dict.ui.scheme_complementary}</option>
+            <option value="triadic">{dict.ui.scheme_triadic}</option>
+            <option value="tetradic">{dict.ui.scheme_tetradic}</option>
+            <option value="monochromatic">{dict.ui.scheme_monochromatic}</option>
           </select>
         </div>
       </div>

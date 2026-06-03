@@ -19,18 +19,18 @@ export default function Uuid({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div>
-          <label className="text-sm font-medium block mb-1">Version</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.version}</label>
           <select value={version} onChange={(e) => setVersion(e.target.value as "v4" | "v1")} className="w-full border border-slate-300 rounded px-3 py-2">
-            <option value="v4">v4 (random)</option>
-            <option value="v1">v1 (timestamp)</option>
+            <option value="v4">{dict.ui.v4}</option>
+            <option value="v1">{dict.ui.v1}</option>
           </select>
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Count</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.count}</label>
           <input type="number" min="1" max="50" value={count} onChange={(e) => setCount(parseInt(e.target.value) || 1)} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
         <div className="flex items-end">
-          <button onClick={generate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg">Generate</button>
+          <button type="button" onClick={generate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg">{dict.ui.generate}</button>
         </div>
       </div>
       {uuids.length > 0 && (

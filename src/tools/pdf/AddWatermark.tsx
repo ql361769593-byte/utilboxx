@@ -4,7 +4,7 @@ import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
 import { PDFDocument, StandardFonts, degrees, rgb } from "pdf-lib";
 
-export default function AddWatermark({ dict }: { dict: Dictionary }) {
+export default function AddWatermarkPdf({ dict }: { dict: Dictionary }) {
   const [text, setText] = useState("CONFIDENTIAL");
   const [opacity, setOpacity] = useState(0.3);
   const [size, setSize] = useState(50);
@@ -13,7 +13,7 @@ export default function AddWatermark({ dict }: { dict: Dictionary }) {
     <div className="space-y-4">
       <div className="space-y-3">
         <div>
-          <label className="text-sm font-medium block mb-1">Watermark text</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.watermark_text}</label>
           <input
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -22,7 +22,9 @@ export default function AddWatermark({ dict }: { dict: Dictionary }) {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="text-sm font-medium block mb-1">Opacity: {opacity.toFixed(1)}</label>
+            <label className="text-sm font-medium block mb-1">
+              {dict.ui.opacity}: {opacity.toFixed(1)}
+            </label>
             <input
               type="range"
               min="0.1"
@@ -34,7 +36,9 @@ export default function AddWatermark({ dict }: { dict: Dictionary }) {
             />
           </div>
           <div>
-            <label className="text-sm font-medium block mb-1">Font size: {size}px</label>
+            <label className="text-sm font-medium block mb-1">
+              {dict.ui.size}: {size}px
+            </label>
             <input
               type="range"
               min="20"

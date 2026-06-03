@@ -40,7 +40,7 @@ export default async function CategoryPage({
         <span>{catName}</span>
       </nav>
       <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">{catName}</h1>
-      <p className="text-slate-600 mb-8">{catTools.length} tools</p>
+      <p className="text-slate-600 mb-8">{catTools.length} {dict.ui.tools_count}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {catTools.map((tool) => (

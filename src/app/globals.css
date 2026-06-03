@@ -23,6 +23,12 @@ body {
   box-sizing: border-box;
 }
 
+/* 全局链接去下划线 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .gradient-bg {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -50,4 +56,13 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]::file-selector-button:hover {
   background-color: rgb(29 78 216);
+}
+
+/* button 重置保证不被覆盖 */
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }

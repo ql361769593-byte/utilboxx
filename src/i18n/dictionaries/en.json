@@ -18,13 +18,34 @@
     "features_subtitle": "Choose from our growing collection of free online tools",
     "cta": "Start Using",
     "categories": [
-      { "title": "PDF Tools", "description": "Merge, split, compress, convert PDF files" },
-      { "title": "Image Tools", "description": "Compress, resize, crop, convert images" },
-      { "title": "Text Tools", "description": "Count, format, transform text" },
-      { "title": "Unit Converters", "description": "Convert length, weight, temperature, and more" },
-      { "title": "Color Tools", "description": "Pick colors, convert formats, generate palettes" },
-      { "title": "Crypto Tools", "description": "Hash, encode, decode, generate UUIDs" },
-      { "title": "Developer Tools", "description": "JSON formatter, timestamp converter, QR codes" }
+      {
+        "title": "PDF Tools",
+        "description": "Merge, split, compress, convert PDF files"
+      },
+      {
+        "title": "Image Tools",
+        "description": "Compress, resize, crop, convert images"
+      },
+      {
+        "title": "Text Tools",
+        "description": "Count, format, transform text"
+      },
+      {
+        "title": "Unit Converters",
+        "description": "Convert length, weight, temperature, and more"
+      },
+      {
+        "title": "Color Tools",
+        "description": "Pick colors, convert formats, generate palettes"
+      },
+      {
+        "title": "Crypto Tools",
+        "description": "Hash, encode, decode, generate UUIDs"
+      },
+      {
+        "title": "Developer Tools",
+        "description": "JSON formatter, timestamp converter, QR codes"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "Options",
     "error": "Error",
     "success": "Success",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "swap": "Swap",
+    "now": "Now"
   },
   "ui": {
     "choose_file": "Choose file",
@@ -112,7 +135,67 @@
     "or": "or",
     "paste_text": "Paste text here",
     "type_text": "Type or paste your text",
-    "select_option": "Select an option"
+    "select_option": "Select an option",
+    "format": "Format",
+    "width": "Width",
+    "height": "Height",
+    "x": "X",
+    "y": "Y",
+    "quality": "Quality",
+    "size": "Size",
+    "opacity": "Opacity",
+    "rotation": "Rotation",
+    "position": "Position",
+    "indent": "Indent",
+    "spaces": "spaces",
+    "spaces_2": "2 spaces",
+    "spaces_4": "4 spaces",
+    "minified": "Minified",
+    "foreground": "Foreground",
+    "background": "Background",
+    "count": "Count",
+    "length": "Length",
+    "case_sensitive": "Case sensitive",
+    "keep_empty": "Keep empty lines",
+    "keep_ratio": "Keep aspect ratio",
+    "watermark_text": "Watermark text",
+    "output_format": "Output format",
+    "base_hue": "Base hue",
+    "scheme": "Scheme",
+    "scheme_analogous": "Analogous",
+    "scheme_complementary": "Complementary",
+    "scheme_triadic": "Triadic",
+    "scheme_tetradic": "Tetradic",
+    "scheme_monochromatic": "Monochromatic",
+    "pos_tl": "Top Left",
+    "pos_tr": "Top Right",
+    "pos_bl": "Bottom Left",
+    "pos_br": "Bottom Right",
+    "pos_center": "Center",
+    "version": "Version",
+    "v4": "v4 (random)",
+    "v1": "v1 (timestamp)",
+    "generate": "Generate",
+    "exclude": "Exclude characters",
+    "very_weak": "Very Weak",
+    "weak": "Weak",
+    "fair": "Fair",
+    "good": "Good",
+    "strong": "Strong",
+    "remove_duplicates": "Remove Duplicates",
+    "now_s": "Now (s)",
+    "now_ms": "Now (ms)",
+    "epoch": "Epoch (0)",
+    "text_a": "Text A",
+    "text_b": "Text B",
+    "pattern": "Pattern",
+    "flags": "Flags",
+    "test_text": "Test text",
+    "unix_timestamp": "Unix timestamp (seconds)",
+    "date_string": "Date string",
+    "tool_not_found": "Tool not found",
+    "tools_count": "tools",
+    "page_x_of_y": "Page"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. All rights reserved.",

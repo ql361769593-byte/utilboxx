@@ -10,7 +10,7 @@ export default function ConvertImage({ dict }: { dict: Dictionary }) {
   return (
     <div className="space-y-4">
       <div>
-        <label className="text-sm font-medium block mb-1">Output format</label>
+        <label className="text-sm font-medium block mb-1">{dict.ui.output_format}</label>
         <select
           value={format}
           onChange={(e) => setFormat(e.target.value as typeof formats[number])}
@@ -39,14 +39,17 @@ export default function ConvertImage({ dict }: { dict: Dictionary }) {
           const canvas = document.createElement("canvas");
           canvas.width = img.width;
           canvas.height = img.height;
-          const ctx = canvas.getContext("2d")!;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) return;
           ctx.drawImage(img, 0, 0);
           const mime = format === "jpeg" ? "image/jpeg" : `image/${format}`;
-          const blob: Blob = await new Promise((res) =>
-            canvas.toBlob((b) => res(b!), mime)!
+          const blob: Blob | null = await new Promise((res) =>
+            canvas.toBlob((b) => res(b), mime)
           );
-          const newName = file.name.replace(/\.[^.]+$/, `.${format}`);
-          downloadBlob(blob, newName);
+          if (blob) {
+            const newName = file.name.replace(/\.[^.]+$/, `.${format}`);
+            downloadBlob(blob, newName);
+          }
           URL.revokeObjectURL(url);
         }}
       />

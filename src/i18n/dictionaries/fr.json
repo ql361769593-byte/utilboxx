@@ -18,13 +18,34 @@
     "features_subtitle": "Choisissez parmi notre collection croissante d'outils en ligne gratuits",
     "cta": "Commencer",
     "categories": [
-      { "title": "Outils PDF", "description": "Fusionner, diviser, compresser, convertir PDF" },
-      { "title": "Outils d'Image", "description": "Compresser, redimensionner, recadrer, convertir des images" },
-      { "title": "Outils de Texte", "description": "Compter, formater, transformer du texte" },
-      { "title": "Convertisseurs d'Unités", "description": "Convertir longueur, poids, température et plus" },
-      { "title": "Outils de Couleur", "description": "Choisir des couleurs, convertir des formats, générer des palettes" },
-      { "title": "Outils Crypto", "description": "Hash, encoder, décoder, générer UUID" },
-      { "title": "Outils Développeur", "description": "Formateur JSON, convertisseur timestamp, codes QR" }
+      {
+        "title": "Outils PDF",
+        "description": "Fusionner, diviser, compresser, convertir PDF"
+      },
+      {
+        "title": "Outils d'Image",
+        "description": "Compresser, redimensionner, recadrer, convertir des images"
+      },
+      {
+        "title": "Outils de Texte",
+        "description": "Compter, formater, transformer du texte"
+      },
+      {
+        "title": "Convertisseurs d'Unités",
+        "description": "Convertir longueur, poids, température et plus"
+      },
+      {
+        "title": "Outils de Couleur",
+        "description": "Choisir des couleurs, convertir des formats, générer des palettes"
+      },
+      {
+        "title": "Outils Crypto",
+        "description": "Hash, encoder, décoder, générer UUID"
+      },
+      {
+        "title": "Outils Développeur",
+        "description": "Formateur JSON, convertisseur timestamp, codes QR"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "Options",
     "error": "Erreur",
     "success": "Succès",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "swap": "Échanger",
+    "now": "Maintenant"
   },
   "ui": {
     "choose_file": "Choisir un fichier",
@@ -112,7 +135,67 @@
     "or": "ou",
     "paste_text": "Collez le texte ici",
     "type_text": "Tapez ou collez votre texte",
-    "select_option": "Sélectionnez une option"
+    "select_option": "Sélectionnez une option",
+    "format": "Format",
+    "width": "Largeur",
+    "height": "Hauteur",
+    "x": "X",
+    "y": "Y",
+    "quality": "Qualité",
+    "size": "Taille",
+    "opacity": "Opacité",
+    "rotation": "Rotation",
+    "position": "Position",
+    "indent": "Indentation",
+    "spaces": "espaces",
+    "spaces_2": "2 espaces",
+    "spaces_4": "4 espaces",
+    "minified": "Minifié",
+    "foreground": "Premier plan",
+    "background": "Arrière-plan",
+    "count": "Nombre",
+    "length": "Longueur",
+    "case_sensitive": "Sensible à la casse",
+    "keep_empty": "Garder les lignes vides",
+    "keep_ratio": "Conserver les proportions",
+    "watermark_text": "Texte du filigrane",
+    "output_format": "Format de sortie",
+    "base_hue": "Teinte de base",
+    "scheme": "Schéma",
+    "scheme_analogous": "Analogue",
+    "scheme_complementary": "Complémentaire",
+    "scheme_triadic": "Triadique",
+    "scheme_tetradic": "Tétradique",
+    "scheme_monochromatic": "Monochromatique",
+    "pos_tl": "Haut gauche",
+    "pos_tr": "Haut droite",
+    "pos_bl": "Bas gauche",
+    "pos_br": "Bas droite",
+    "pos_center": "Centre",
+    "version": "Version",
+    "v4": "v4 (aléatoire)",
+    "v1": "v1 (timestamp)",
+    "generate": "Générer",
+    "exclude": "Exclure des caractères",
+    "very_weak": "Très faible",
+    "weak": "Faible",
+    "fair": "Moyen",
+    "good": "Bonne",
+    "strong": "Forte",
+    "remove_duplicates": "Supprimer Doublons",
+    "now_s": "Maintenant (s)",
+    "now_ms": "Maintenant (ms)",
+    "epoch": "Époque (0)",
+    "text_a": "Texte A",
+    "text_b": "Texte B",
+    "pattern": "Motif",
+    "flags": "Drapeaux",
+    "test_text": "Texte de test",
+    "unix_timestamp": "Timestamp Unix (secondes)",
+    "date_string": "Chaîne de date",
+    "tool_not_found": "Outil non trouvé",
+    "tools_count": "outils",
+    "page_x_of_y": "Page"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. Tous droits réservés.",

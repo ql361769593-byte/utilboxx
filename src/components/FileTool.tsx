@@ -20,6 +20,7 @@ export function FileTool({
 }) {
   const [files, setFiles] = useState<File[]>([]);
   const [processing, setProcessing] = useState(false);
+  const [dragOver, setDragOver] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFiles = (fs: FileList | null) => {
@@ -39,14 +40,22 @@ export function FileTool({
 
   return (
     <div className="space-y-4">
-      <div
-        onClick={() => inputRef.current?.click()}
+      <label
+        className={`block border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition ${
+          dragOver
+            ? "border-blue-500 bg-blue-50"
+            : "border-slate-300 hover:border-blue-500 hover:bg-blue-50/30"
+        }`}
         onDrop={(e) => {
           e.preventDefault();
+          setDragOver(false);
           handleFiles(e.dataTransfer.files);
         }}
-        onDragOver={(e) => e.preventDefault()}
-        className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center cursor-pointer hover:border-blue-500 hover:bg-blue-50/30 transition"
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragOver(true);
+        }}
+        onDragLeave={() => setDragOver(false)}
       >
         <Upload className="w-10 h-10 text-slate-400 mx-auto mb-3" />
         <p className="text-slate-700 font-medium">{dict.ui.choose_file}</p>
@@ -57,9 +66,9 @@ export function FileTool({
           accept={accept}
           multiple={multiple}
           onChange={(e) => handleFiles(e.target.files)}
-          className="hidden"
+          className="sr-only"
         />
-      </div>
+      </label>
 
       {files.length > 0 && (
         <div className="space-y-2">
@@ -80,9 +89,10 @@ export function FileTool({
       {children}
 
       <button
+        type="button"
         onClick={handleProcess}
         disabled={files.length === 0 || processing}
-        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2"
+        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2 relative z-10"
       >
         {processing ? (
           <>
@@ -102,6 +112,8 @@ export function downloadBlob(blob: Blob, filename: string) {
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 100);
 }

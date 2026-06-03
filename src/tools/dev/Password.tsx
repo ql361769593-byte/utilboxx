@@ -36,24 +36,24 @@ export default function Password({ dict }: { dict: Dictionary }) {
     setPasswords(out);
   };
 
-  const strength = (() => {
-    let score = 0;
-    if (length >= 8) score++;
-    if (length >= 12) score++;
-    if (length >= 16) score++;
-    const numTypes = [upper, lower, numbers, symbols].filter(Boolean).length;
-    if (numTypes >= 3) score++;
-    if (numTypes === 4) score++;
-    return Math.min(4, score);
-  })();
+  const numTypes = [upper, lower, numbers, symbols].filter(Boolean).length;
+  let strength = 0;
+  if (length >= 8) strength++;
+  if (length >= 12) strength++;
+  if (length >= 16) strength++;
+  if (numTypes >= 3) strength++;
+  if (numTypes === 4) strength++;
+  strength = Math.min(4, strength);
 
-  const strengthLabels = ["Very Weak", "Weak", "Fair", "Good", "Strong"];
+  const strengthLabels = [dict.ui.very_weak, dict.ui.weak, dict.ui.fair, dict.ui.good, dict.ui.strong];
   const strengthColors = ["bg-red-500", "bg-orange-500", "bg-yellow-500", "bg-blue-500", "bg-green-500"];
 
   return (
     <div className="space-y-4">
       <div>
-        <label className="text-sm font-medium block mb-1">Length: {length}</label>
+        <label className="text-sm font-medium block mb-1">
+          {dict.ui.length}: {length}
+        </label>
         <input type="range" min="4" max="64" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full" />
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -71,11 +71,13 @@ export default function Password({ dict }: { dict: Dictionary }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="text-sm font-medium block mb-1">Exclude characters</label>
+          <label className="text-sm font-medium block mb-1">{dict.ui.exclude}</label>
           <input value={exclude} onChange={(e) => setExclude(e.target.value)} className="w-full border border-slate-300 rounded px-3 py-2 font-mono text-sm" placeholder="e.g. 0OIl" />
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Count: {count}</label>
+          <label className="text-sm font-medium block mb-1">
+            {dict.ui.count}: {count}
+          </label>
           <input type="number" min="1" max="20" value={count} onChange={(e) => setCount(parseInt(e.target.value) || 1)} className="w-full border border-slate-300 rounded px-3 py-2" />
         </div>
       </div>
@@ -89,8 +91,8 @@ export default function Password({ dict }: { dict: Dictionary }) {
           <span className="text-sm font-medium w-24 text-right">{strengthLabels[strength]}</span>
         </div>
       </div>
-      <button onClick={generate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg">
-        Generate
+      <button type="button" onClick={generate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg">
+        {dict.ui.generate}
       </button>
       {passwords.length > 0 && (
         <div className="space-y-2">

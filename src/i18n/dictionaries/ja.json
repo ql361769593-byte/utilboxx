@@ -18,13 +18,34 @@
     "features_subtitle": "増え続ける無料オンラインツールからお選びください",
     "cta": "使い始める",
     "categories": [
-      { "title": "PDF ツール", "description": "PDF ファイルの結合、分割、圧縮、変換" },
-      { "title": "画像ツール", "description": "画像の圧縮、リサイズ、切り取り、変換" },
-      { "title": "テキストツール", "description": "テキストのカウント、フォーマット、変換" },
-      { "title": "単位変換", "description": "長さ、重さ、温度などの変換" },
-      { "title": "色ツール", "description": "色の選択、フォーマット変換、パレット生成" },
-      { "title": "暗号ツール", "description": "ハッシュ、エンコード、デコード、UUID 生成" },
-      { "title": "開発者ツール", "description": "JSON フォーマッタ、タイムスタンプ、QR コード" }
+      {
+        "title": "PDF ツール",
+        "description": "PDF ファイルの結合、分割、圧縮、変換"
+      },
+      {
+        "title": "画像ツール",
+        "description": "画像の圧縮、リサイズ、切り取り、変換"
+      },
+      {
+        "title": "テキストツール",
+        "description": "テキストのカウント、フォーマット、変換"
+      },
+      {
+        "title": "単位変換",
+        "description": "長さ、重さ、温度などの変換"
+      },
+      {
+        "title": "色ツール",
+        "description": "色の選択、フォーマット変換、パレット生成"
+      },
+      {
+        "title": "暗号ツール",
+        "description": "ハッシュ、エンコード、デコード、UUID 生成"
+      },
+      {
+        "title": "開発者ツール",
+        "description": "JSON フォーマッタ、タイムスタンプ、QR コード"
+      }
     ]
   },
   "tools": {
@@ -104,7 +125,9 @@
     "options": "オプション",
     "error": "エラー",
     "success": "成功",
-    "loading": "読み込み中..."
+    "loading": "読み込み中...",
+    "swap": "入れ替え",
+    "now": "現在"
   },
   "ui": {
     "choose_file": "ファイルを選択",
@@ -112,7 +135,67 @@
     "or": "または",
     "paste_text": "ここにテキストを貼り付け",
     "type_text": "テキストを入力または貼り付け",
-    "select_option": "オプションを選択"
+    "select_option": "オプションを選択",
+    "format": "形式",
+    "width": "幅",
+    "height": "高さ",
+    "x": "X",
+    "y": "Y",
+    "quality": "品質",
+    "size": "サイズ",
+    "opacity": "不透明度",
+    "rotation": "回転",
+    "position": "位置",
+    "indent": "インデント",
+    "spaces": "スペース",
+    "spaces_2": "2 スペース",
+    "spaces_4": "4 スペース",
+    "minified": "最小化",
+    "foreground": "前景",
+    "background": "背景",
+    "count": "数",
+    "length": "長さ",
+    "case_sensitive": "大文字小文字を区別",
+    "keep_empty": "空行を保持",
+    "keep_ratio": "アスペクト比を保持",
+    "watermark_text": "透かしテキスト",
+    "output_format": "出力形式",
+    "base_hue": "基本色相",
+    "scheme": "スキーム",
+    "scheme_analogous": "類似色",
+    "scheme_complementary": "補色",
+    "scheme_triadic": "トライアド",
+    "scheme_tetradic": "テトラード",
+    "scheme_monochromatic": "モノクロマティック",
+    "pos_tl": "左上",
+    "pos_tr": "右上",
+    "pos_bl": "左下",
+    "pos_br": "右下",
+    "pos_center": "中央",
+    "version": "バージョン",
+    "v4": "v4 (ランダム)",
+    "v1": "v1 (タイムスタンプ)",
+    "generate": "生成",
+    "exclude": "除外する文字",
+    "very_weak": "非常に弱い",
+    "weak": "弱い",
+    "fair": "普通",
+    "good": "良好",
+    "strong": "強力",
+    "remove_duplicates": "重複削除",
+    "now_s": "現在 (秒)",
+    "now_ms": "現在 (ミリ秒)",
+    "epoch": "エポック (0)",
+    "text_a": "テキスト A",
+    "text_b": "テキスト B",
+    "pattern": "パターン",
+    "flags": "フラグ",
+    "test_text": "テストテキスト",
+    "unix_timestamp": "Unix タイムスタンプ（秒）",
+    "date_string": "日付文字列",
+    "tool_not_found": "ツールが見つかりません",
+    "tools_count": "個のツール",
+    "page_x_of_y": "ページ"
   },
   "footer": {
     "copyright": "© 2026 UtilBoxx. 全著作権所有。",

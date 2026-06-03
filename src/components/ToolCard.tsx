@@ -94,7 +94,7 @@ export function ToolIcon({ name, category }: { name: string; category: string })
   const color = colorMap[category] || "from-slate-500 to-slate-600";
   return (
     <div
-      className={`w-12 h-12 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white`}
+      className={`w-12 h-12 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shrink-0`}
     >
       <Icon className="w-6 h-6" />
     </div>
@@ -117,7 +117,7 @@ export function ToolCard({
   return (
     <Link
       href={`/${locale}/tools/${tool.slug}`}
-      className="block bg-white border border-slate-200 rounded-xl p-5 card-hover"
+      className="block bg-white border border-slate-200 rounded-xl p-5 card-hover no-underline"
     >
       <div className="flex items-start gap-4">
         <ToolIcon name={tool.icon} category={tool.category} />
