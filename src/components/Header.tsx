@@ -53,6 +53,12 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               {dict.nav.tools}
             </Link>
             <Link
+              href={`/${locale}/blog`}
+              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition"
+            >
+              {dict.blog.title}
+            </Link>
+            <Link
               href={`/${locale}/about`}
               className="text-sm font-medium text-slate-700 hover:text-blue-600 transition"
             >
@@ -108,6 +114,13 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               className="block px-3 py-2 rounded text-sm font-medium text-slate-700 hover:bg-slate-100"
             >
               {dict.nav.tools}
+            </Link>
+            <Link
+              href={`/${locale}/blog`}
+              onClick={() => setMobileOpen(false)}
+              className="block px-3 py-2 rounded text-sm font-medium text-slate-700 hover:bg-slate-100"
+            >
+              {dict.blog.title}
             </Link>
             <Link
               href={`/${locale}/about`}

@@ -242,5 +242,12 @@
     "alt_email_label": "邮箱",
     "alt_response_label": "回复时间",
     "alt_response_value": "通常 48 小时内"
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "实用的数字工具指南、技巧和教程。",
+    "readMore": "阅读更多",
+    "empty": "暂无文章。",
+    "backToList": "返回文章列表"
   }
 }

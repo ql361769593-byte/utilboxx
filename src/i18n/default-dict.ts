@@ -93,4 +93,11 @@ export const defaultDict: Dictionary = {
     alt_response_label: "Response time",
     alt_response_value: "Usually within 48 hours",
   },
+  blog: {
+    title: "Blog",
+    subtitle: "Practical guides, tips, and tutorials for everyday digital tools.",
+    readMore: "Read more",
+    empty: "No articles yet.",
+    backToList: "Back to all articles",
+  },
 };

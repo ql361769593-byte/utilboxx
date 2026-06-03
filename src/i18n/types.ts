@@ -210,4 +210,11 @@ export type Dictionary = {
     alt_response_label: string;
     alt_response_value: string;
   };
+  blog: {
+    title: string;
+    subtitle: string;
+    readMore: string;
+    empty: string;
+    backToList: string;
+  };
 };

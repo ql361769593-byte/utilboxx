@@ -242,5 +242,12 @@
     "alt_email_label": "E-mail",
     "alt_response_label": "Délai de réponse",
     "alt_response_value": "Généralement sous 48 heures"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Guides pratiques, conseils et tutoriels pour les outils numériques quotidiens.",
+    "readMore": "Lire plus",
+    "empty": "Pas encore d'articles.",
+    "backToList": "Retour à tous les articles"
   }
 }
