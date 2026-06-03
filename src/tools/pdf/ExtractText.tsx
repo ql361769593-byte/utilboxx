@@ -15,8 +15,7 @@ export default function ExtractText({ dict }: { dict: Dictionary }) {
         onProcess={async (files) => {
           const file = files[0];
           const pdfjs = await import("pdfjs-dist");
-          // @ts-expect-error - worker
-          pdfjs.GlobalWorkerOptions.workerSrc = await import("pdfjs-dist/build/pdf.worker.min.mjs?url");
+          (pdfjs as any).GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs`;
           const bytes = await file.arrayBuffer();
           const pdf = await pdfjs.getDocument({ data: bytes }).promise;
           let out = "";
