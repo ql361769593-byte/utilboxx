@@ -9,7 +9,8 @@
     "home": "Home",
     "tools": "Tools",
     "about": "About",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "contact": "Contact"
   },
   "home": {
     "hero_title": "Free Online Tools for Everyone",
@@ -200,5 +201,45 @@
   "footer": {
     "copyright": "© 2026 UtilBoxx. All rights reserved.",
     "made_with": "Made with care for the global community"
+  },
+  "about": {
+    "intro_p1": "UtilBoxx is a free online toolbox built for the global community. We provide 40+ carefully crafted tools across 7 categories: PDF, image, text, unit conversion, color, cryptography, and developer utilities.",
+    "intro_p2": "All tools run entirely in your browser. Your files never touch our servers. This isn't just a privacy feature — it's the foundation of how we think tools should work in 2026.",
+    "intro_p3": "Founded in 2026, UtilBoxx is a small independent project. We're not venture-backed, we don't sell your data, and we don't have a premium tier. Just useful tools, in your language, for free.",
+    "why_title": "Why UtilBoxx?",
+    "why_items": [
+      "100% Free — no hidden fees, no premium tiers, no limits",
+      "Privacy First — all processing happens in your browser, files never leave your device",
+      "No Signup — start using tools instantly, no account required",
+      "Multi-language — supports 7 languages: English, Chinese, Japanese, Spanish, Portuguese, French, German",
+      "Mobile Friendly — works perfectly on phones, tablets, and desktops",
+      "No Ads Tracking — we don't follow you around the web with ads"
+    ],
+    "mission_title": "Our Mission",
+    "mission_p1": "We believe useful tools should be free, fast, and respect user privacy. The web has become bloated with ads, paywalls, and data collection. UtilBoxx is our small contribution to a better web.",
+    "mission_p2": "Every tool is designed to be the simplest version of itself. No upsells, no newsletter popups, no dark patterns. Just the tool you came for.",
+    "tech_title": "Technology",
+    "tech_p1": "UtilBoxx is built with Next.js 14, TypeScript, and Tailwind CSS. PDF processing uses pdf-lib, image processing uses the Canvas API and browser-image-compression, and everything else runs natively in modern browsers.",
+    "tech_p2": "We deploy on Vercel's global edge network, which means fast load times wherever you are in the world.",
+    "contact_title": "Get in Touch",
+    "contact_p1": "Have feedback, suggestions, or found a bug? We'd love to hear from you. Visit our Contact page to send us a message."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question, suggestion, or found a bug? We'd love to hear from you.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success_title": "Message Sent!",
+    "success_message": "Thank you for reaching out. We'll get back to you within 48 hours.",
+    "error_required": "This field is required",
+    "error_email": "Please enter a valid email address",
+    "alt_title": "Other ways to reach us",
+    "alt_email_label": "Email",
+    "alt_response_label": "Response time",
+    "alt_response_value": "Usually within 48 hours"
   }
 }

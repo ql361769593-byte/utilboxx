@@ -9,7 +9,8 @@
     "home": "Accueil",
     "tools": "Outils",
     "about": "À propos",
-    "privacy": "Confidentialité"
+    "privacy": "Confidentialité",
+    "contact": "Contact"
   },
   "home": {
     "hero_title": "Outils en Ligne Gratuits pour Tous",
@@ -200,5 +201,45 @@
   "footer": {
     "copyright": "© 2026 UtilBoxx. Tous droits réservés.",
     "made_with": "Fait avec soin pour la communauté mondiale"
+  },
+  "about": {
+    "intro_p1": "UtilBoxx est une boîte à outils en ligne gratuite conçue pour la communauté mondiale. Nous proposons plus de 40 outils soignés dans 7 catégories : PDF, image, texte, conversion d'unités, couleur, cryptographie et utilitaires pour développeurs.",
+    "intro_p2": "Tous les outils fonctionnent entièrement dans votre navigateur. Vos fichiers ne touchent jamais nos serveurs. Ce n'est pas seulement une fonctionnalité de confidentialité — c'est le fondement de notre vision des outils en 2026.",
+    "intro_p3": "Fondé en 2026, UtilBoxx est un petit projet indépendant. Nous ne sommes pas financés par des capitaux, nous ne vendons pas vos données et nous n'avons pas d'offre premium. Juste des outils utiles, dans votre langue, gratuitement.",
+    "why_title": "Pourquoi UtilBoxx ?",
+    "why_items": [
+      "100% gratuit — pas de frais cachés, pas d'offre premium, pas de limites",
+      "Confidentialité d'abord — tout le traitement se fait dans votre navigateur, les fichiers ne quittent jamais votre appareil",
+      "Sans inscription — commencez à utiliser les outils instantanément, sans compte",
+      "Multilingue — prend en charge 7 langues : anglais, chinois, japonais, espagnol, portugais, français, allemand",
+      "Compatible mobile — fonctionne parfaitement sur téléphones, tablettes et ordinateurs",
+      "Pas de suivi publicitaire — nous ne vous suivons pas sur le web avec des publicités"
+    ],
+    "mission_title": "Notre Mission",
+    "mission_p1": "Nous croyons que les outils utiles doivent être gratuits, rapides et respecter la vie privée des utilisateurs. Le web est devenu gonflé de publicités, de paywalls et de collecte de données. UtilBoxx est notre petite contribution à un meilleur web.",
+    "mission_p2": "Chaque outil est conçu pour être la version la plus simple de lui-même. Pas d'upsell, pas de popups de newsletter, pas de dark patterns. Juste l'outil que vous êtes venu chercher.",
+    "tech_title": "Technologie",
+    "tech_p1": "UtilBoxx est construit avec Next.js 14, TypeScript et Tailwind CSS. Le traitement PDF utilise pdf-lib, le traitement d'images utilise l'API Canvas et browser-image-compression, et tout le reste s'exécute nativement dans les navigateurs modernes.",
+    "tech_p2": "Nous déployons sur le réseau edge mondial de Vercel, ce qui signifie des temps de chargement rapides où que vous soyez dans le monde.",
+    "contact_title": "Contactez-nous",
+    "contact_p1": "Vous avez des commentaires, des suggestions ou trouvé un bug ? Nous aimerions avoir de vos nouvelles. Visitez notre page Contact pour nous envoyer un message."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question, une suggestion ou un bug à signaler ? Nous serions ravis de vous entendre.",
+    "name": "Nom",
+    "email": "E-mail",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success_title": "Message envoyé !",
+    "success_message": "Merci de nous avoir contactés. Nous vous répondrons dans les 48 heures.",
+    "error_required": "Ce champ est obligatoire",
+    "error_email": "Veuillez entrer une adresse e-mail valide",
+    "alt_title": "Autres moyens de nous joindre",
+    "alt_email_label": "E-mail",
+    "alt_response_label": "Délai de réponse",
+    "alt_response_value": "Généralement sous 48 heures"
   }
 }

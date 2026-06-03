@@ -10,6 +10,7 @@ export type Dictionary = {
     tools: string;
     about: string;
     privacy: string;
+    contact: string;
   };
   home: {
     hero_title: string;
@@ -174,5 +175,38 @@ export type Dictionary = {
   footer: {
     copyright: string;
     made_with: string;
+  };
+  about: {
+    intro_p1: string;
+    intro_p2: string;
+    intro_p3: string;
+    why_title: string;
+    why_items: string[];
+    mission_title: string;
+    mission_p1: string;
+    mission_p2: string;
+    tech_title: string;
+    tech_p1: string;
+    tech_p2: string;
+    contact_title: string;
+    contact_p1: string;
+  };
+  contact: {
+    title: string;
+    subtitle: string;
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    send: string;
+    sending: string;
+    success_title: string;
+    success_message: string;
+    error_required: string;
+    error_email: string;
+    alt_title: string;
+    alt_email_label: string;
+    alt_response_label: string;
+    alt_response_value: string;
   };
 };

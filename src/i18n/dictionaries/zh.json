@@ -9,7 +9,8 @@
     "home": "首页",
     "tools": "工具",
     "about": "关于",
-    "privacy": "隐私"
+    "privacy": "隐私",
+    "contact": "联系我们"
   },
   "home": {
     "hero_title": "人人可用的免费在线工具",
@@ -200,5 +201,45 @@
   "footer": {
     "copyright": "© 2026 UtilBoxx. 保留所有权利。",
     "made_with": "用心为全球用户打造"
+  },
+  "about": {
+    "intro_p1": "UtilBoxx 是为全球用户打造的免费在线工具箱。我们提供 40+ 个精心设计的工具,涵盖 7 个类别:PDF、图片、文本、单位换算、颜色、加密、开发者工具。",
+    "intro_p2": "所有工具完全在您的浏览器中运行。您的文件永远不会上传到我们的服务器。这不仅是一个隐私功能,更是我们对 2026 年工具应该如何工作的核心理念。",
+    "intro_p3": "UtilBoxx 创建于 2026 年,是一个小型独立项目。我们不融资、不卖用户数据、也没有付费版。只有好用的工具,用您的语言,免费。",
+    "why_title": "为什么选择 UtilBoxx?",
+    "why_items": [
+      "100% 免费 — 没有隐藏费用,没有付费版,没有使用限制",
+      "隐私优先 — 所有处理在浏览器中完成,文件不上传服务器",
+      "无需注册 — 立即使用,不需要账号",
+      "多语言支持 — 支持 7 种语言:英语、中文、日语、西班牙语、葡萄牙语、法语、德语",
+      "移动友好 — 完美适配手机、平板和电脑",
+      "无广告追踪 — 我们不会用广告在网络上跟踪您"
+    ],
+    "mission_title": "我们的使命",
+    "mission_p1": "我们相信有用的工具应该免费、快速、尊重用户隐私。如今的网页充斥着广告、付费墙和数据收集。UtilBoxx 是我们对更好网络的小小贡献。",
+    "mission_p2": "每个工具都设计为最简单的形态。没有诱导消费,没有弹窗订阅,没有阴暗模式。只有您要的工具。",
+    "tech_title": "技术栈",
+    "tech_p1": "UtilBoxx 使用 Next.js 14、TypeScript 和 Tailwind CSS 构建。PDF 处理使用 pdf-lib,图片处理使用 Canvas API 和 browser-image-compression,其他功能都在现代浏览器中原生运行。",
+    "tech_p2": "我们部署在 Vercel 的全球边缘网络,无论您身在何处都能快速加载。",
+    "contact_title": "联系我们",
+    "contact_p1": "有反馈、建议,或发现了 bug?我们很乐意听到您的声音。访问我们的联系页面给我们留言。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有问题、建议,或发现了 bug?我们很乐意听到您的声音。",
+    "name": "姓名",
+    "email": "邮箱",
+    "subject": "主题",
+    "message": "留言",
+    "send": "发送",
+    "sending": "发送中...",
+    "success_title": "已发送!",
+    "success_message": "感谢您的留言。我们会在 48 小时内回复您。",
+    "error_required": "此项必填",
+    "error_email": "请输入有效的邮箱地址",
+    "alt_title": "其他联系方式",
+    "alt_email_label": "邮箱",
+    "alt_response_label": "回复时间",
+    "alt_response_value": "通常 48 小时内"
   }
 }

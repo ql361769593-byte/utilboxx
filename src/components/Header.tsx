@@ -42,6 +42,12 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             >
               {dict.nav.about}
             </Link>
+            <Link
+              href={`/${locale}/contact`}
+              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition"
+            >
+              {dict.nav.contact}
+            </Link>
           </nav>
 
           {/* 右：语言切换 + 移动端菜单按钮 */}
