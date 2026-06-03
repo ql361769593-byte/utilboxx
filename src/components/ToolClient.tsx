@@ -31,7 +31,6 @@ const loaders: Record<string, () => Promise<{ default: React.ComponentType<{ dic
   "pdf/image-to-pdf": () => import("@/tools/pdf/ImageToPdf"),
   "pdf/add-watermark": () => import("@/tools/pdf/AddWatermark"),
   "pdf/rotate": () => import("@/tools/pdf/Rotate"),
-  "pdf/extract-images": () => import("@/tools/pdf/ExtractImages"),
   "pdf/extract-text": () => import("@/tools/pdf/ExtractText"),
   "pdf/reorder": () => import("@/tools/pdf/Reorder"),
   "image/compress": () => import("@/tools/image/Compress"),
