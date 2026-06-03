@@ -42,7 +42,7 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
     // Formspree 免费方案，无需后端
     // 替换 YOUR_FORM_ID 后即可工作
     try {
-      await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      await fetch("https://formspree.io/f/xvznpvad", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, subject, message }),
