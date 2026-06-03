@@ -3,10 +3,22 @@ import { useState, useMemo } from "react";
 import { CopyButton } from "@/components/UI";
 import type { Dictionary } from "@/i18n/types";
 
-function hexToRgb(hex: string) {
-  const m = hex.replace("#", "").match(/.{1,2}/g);
-  if (!m || m.length < 3) return null;
-  return { r: parseInt(m[0], 16), g: parseInt(m[1], 16), b: parseInt(m[2], 16) };
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  let h = hex.trim().replace("#", "");
+  if (h.length === 3) {
+    h = h.split("").map((c) => c + c).join("");
+  }
+  if (!/^[0-9A-Fa-f]{6}$/.test(h)) return null;
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16),
+  };
+}
+
+function clamp(v: number, min: number, max: number) {
+  if (isNaN(v)) return min;
+  return Math.max(min, Math.min(max, v));
 }
 
 export default function HexRgb({ dict }: { dict: Dictionary }) {
@@ -27,10 +39,13 @@ export default function HexRgb({ dict }: { dict: Dictionary }) {
     }
   };
   const setFromRgb = (nr: number, ng: number, nb: number) => {
-    setR(nr);
-    setG(ng);
-    setB(nb);
-    setHex("#" + [nr, ng, nb].map((v) => v.toString(16).padStart(2, "0")).join("").toUpperCase());
+    const cr = clamp(Math.round(nr), 0, 255);
+    const cg = clamp(Math.round(ng), 0, 255);
+    const cb = clamp(Math.round(nb), 0, 255);
+    setR(cr);
+    setG(cg);
+    setB(cb);
+    setHex("#" + [cr, cg, cb].map((v) => v.toString(16).padStart(2, "0")).join("").toUpperCase());
   };
 
   return (
@@ -74,7 +89,7 @@ export default function HexRgb({ dict }: { dict: Dictionary }) {
               min="0"
               max="255"
               value={c.val}
-              onChange={(e) => c.set(Math.max(0, Math.min(255, parseInt(e.target.value) || 0)))}
+              onChange={(e) => c.set(parseInt(e.target.value))}
               className="w-full mt-1 border border-slate-300 rounded px-3 py-1 text-sm font-mono"
             />
           </div>

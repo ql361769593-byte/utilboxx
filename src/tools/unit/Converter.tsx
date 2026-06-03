@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import type { Dictionary } from "@/i18n/types";
 
 export type Unit = { name: string; factor: number; offset?: number };
@@ -17,7 +17,7 @@ export function UnitConverter({
   const [fromValue, setFromValue] = useState("1");
   const [toValue, setToValue] = useState("");
 
-  const convert = (val: string, from: Unit, to: Unit) => {
+  const convert = useCallback((val: string, from: Unit, to: Unit) => {
     const n = parseFloat(val);
     if (isNaN(n)) return "";
     if (from.offset !== undefined && to.offset !== undefined) {
@@ -26,21 +26,33 @@ export function UnitConverter({
     }
     const baseVal = n * from.factor;
     return (baseVal / to.factor).toString();
-  };
+  }, []);
 
-  const handleFromChange = (v: string) => {
-    setFromValue(v);
-    setToValue(convert(v, fromUnit, toUnit));
-  };
+  // 改 fromValue → 重算 toValue
+  useEffect(() => {
+    setToValue(convert(fromValue, fromUnit, toUnit));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fromValue, fromUnit, toUnit]);
+
+  // 改 toValue → 反推 fromValue（仅在 fromValue 为空或被 toValue 推到时）
+  useEffect(() => {
+    // 只在直接修改 toValue 时触发
+  }, [toValue]);
+
+  const handleFromChange = (v: string) => setFromValue(v);
   const handleToChange = (v: string) => {
     setToValue(v);
     setFromValue(convert(v, toUnit, fromUnit));
   };
   const swap = () => {
-    setFromUnit(toUnit);
-    setToUnit(fromUnit);
-    setFromValue(toValue);
-    setToValue(fromValue);
+    const oldFromUnit = fromUnit;
+    const oldToUnit = toUnit;
+    const oldFromVal = fromValue;
+    const oldToVal = toValue;
+    setFromUnit(oldToUnit);
+    setToUnit(oldFromUnit);
+    setFromValue(oldToVal);
+    setToValue(oldFromVal);
   };
 
   return (

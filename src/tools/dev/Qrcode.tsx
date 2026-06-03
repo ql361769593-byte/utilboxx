@@ -13,8 +13,14 @@ export default function Qrcode({ dict }: { dict: Dictionary }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    if (!canvasRef.current || !text) return;
-    QRCode.toCanvas(canvasRef.current, text, {
+    if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!text) {
+      ctx?.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
+    QRCode.toCanvas(canvas, text, {
       width: size,
       margin: 2,
       color: { dark: fg, light: bg },

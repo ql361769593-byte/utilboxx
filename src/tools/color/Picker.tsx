@@ -1,18 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { CopyButton } from "@/components/UI";
 import type { Dictionary } from "@/i18n/types";
 
-function hexToRgb(hex: string) {
-  const m = hex.replace("#", "").match(/.{1,2}/g);
-  if (!m || m.length < 3) return null;
-  return { r: parseInt(m[0], 16), g: parseInt(m[1], 16), b: parseInt(m[2], 16) };
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  let h = hex.trim().replace("#", "");
+  if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+  if (!/^[0-9A-Fa-f]{6}$/.test(h)) return null;
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16),
+  };
+}
+
+function rgbToHex(r: number, g: number, b: number) {
+  return "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("").toLowerCase();
 }
 
 export default function ColorPicker({ dict }: { dict: Dictionary }) {
-  const [hex, setHex] = useState("#3B82F6");
-  const rgb = hexToRgb(hex) || { r: 0, g: 0, b: 0 };
-  const hsl = (() => {
+  const [hex, setHex] = useState("#3b82f6");
+  const rgb = useMemo(() => hexToRgb(hex), [hex]) || { r: 0, g: 0, b: 0 };
+  const hsl = useMemo(() => {
     let r = rgb.r / 255, g = rgb.g / 255, b = rgb.b / 255;
     const max = Math.max(r, g, b), min = Math.min(r, g, b);
     let h = 0, s = 0, l = (max + min) / 2;
@@ -27,12 +36,15 @@ export default function ColorPicker({ dict }: { dict: Dictionary }) {
       h /= 6;
     }
     return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
-  })();
+  }, [rgb.r, rgb.g, rgb.b]);
+
+  const valid = /^[0-9A-Fa-f]{6}$/.test(hex.replace("#", ""));
+  const colorInputValue = valid ? (hex.startsWith("#") ? hex : "#" + hex) : "#000000";
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-4">
-        <div className="w-full sm:w-48 h-48 rounded-lg border border-slate-200" style={{ background: hex }} />
+        <div className="w-full sm:w-48 h-48 rounded-lg border border-slate-200" style={{ background: valid ? colorInputValue : "#888" }} />
         <div className="flex-1 space-y-3">
           <div>
             <label className="text-sm font-medium block mb-1">HEX</label>
@@ -42,8 +54,8 @@ export default function ColorPicker({ dict }: { dict: Dictionary }) {
             </div>
           </div>
           <div>
-            <label className="text-sm font-medium block mb-1">HEX (color)</label>
-            <input type="color" value={hex} onChange={(e) => setHex(e.target.value)} className="w-full h-12 rounded cursor-pointer" />
+            <label className="text-sm font-medium block mb-1">{dict.ui.foreground} / {dict.ui.background}</label>
+            <input type="color" value={colorInputValue} onChange={(e) => setHex(e.target.value)} className="w-full h-12 rounded cursor-pointer" />
           </div>
         </div>
       </div>

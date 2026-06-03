@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
 
@@ -8,6 +8,24 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
   const [height, setHeight] = useState(600);
   const [keepRatio, setKeepRatio] = useState(true);
   const [origSize, setOrigSize] = useState<{ w: number; h: number } | null>(null);
+  const ratioRef = useRef<number | null>(null);
+
+  const setWidthSafe = (w: number) => {
+    if (isNaN(w) || w <= 0) return;
+    setWidth(w);
+    if (keepRatio) {
+      const r = ratioRef.current ?? (origSize ? origSize.h / origSize.w : height / width);
+      setHeight(Math.round(w * r));
+    }
+  };
+  const setHeightSafe = (h: number) => {
+    if (isNaN(h) || h <= 0) return;
+    setHeight(h);
+    if (keepRatio) {
+      const r = ratioRef.current ?? (origSize ? origSize.w / origSize.h : width / height);
+      setWidth(Math.round(h * r));
+    }
+  };
 
   return (
     <div className="space-y-4">
@@ -16,13 +34,9 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
           <label className="text-sm font-medium block mb-1">{dict.ui.width} (px)</label>
           <input
             type="number"
-            value={width}
-            onChange={(e) => {
-              const w = parseInt(e.target.value);
-              setWidth(w);
-              if (keepRatio && origSize)
-                setHeight(Math.round((w / origSize.w) * origSize.h));
-            }}
+            min="1"
+            value={width || ""}
+            onChange={(e) => setWidthSafe(parseInt(e.target.value))}
             className="w-full border border-slate-300 rounded px-3 py-2"
           />
         </div>
@@ -30,13 +44,9 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
           <label className="text-sm font-medium block mb-1">{dict.ui.height} (px)</label>
           <input
             type="number"
-            value={height}
-            onChange={(e) => {
-              const h = parseInt(e.target.value);
-              setHeight(h);
-              if (keepRatio && origSize)
-                setWidth(Math.round((h / origSize.h) * origSize.w));
-            }}
+            min="1"
+            value={height || ""}
+            onChange={(e) => setHeightSafe(parseInt(e.target.value))}
             className="w-full border border-slate-300 rounded px-3 py-2"
           />
         </div>
@@ -45,7 +55,13 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
         <input
           type="checkbox"
           checked={keepRatio}
-          onChange={(e) => setKeepRatio(e.target.checked)}
+          onChange={(e) => {
+            const v = e.target.checked;
+            setKeepRatio(v);
+            if (v && origSize) {
+              ratioRef.current = origSize.h / origSize.w;
+            }
+          }}
         />
         {dict.ui.keep_ratio}
       </label>
@@ -62,7 +78,10 @@ export default function ResizeImage({ dict }: { dict: Dictionary }) {
             i.onerror = rej;
             i.src = url;
           });
-          if (!origSize) setOrigSize({ w: img.width, h: img.height });
+          if (!origSize) {
+            setOrigSize({ w: img.width, h: img.height });
+            ratioRef.current = img.height / img.width;
+          }
           const canvas = document.createElement("canvas");
           canvas.width = width;
           canvas.height = height;
