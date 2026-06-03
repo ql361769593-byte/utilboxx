@@ -13,7 +13,7 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm mb-6">
             <Sparkles className="w-4 h-4" />
-            <span>100% Free · No Signup · Privacy First</span>
+            <span>{dict.home.hero_badge}</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             {dict.home.hero_title}

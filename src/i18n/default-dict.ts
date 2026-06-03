@@ -9,6 +9,7 @@ export const defaultDict: Dictionary = {
   },
   nav: { home: "Home", tools: "Tools", about: "About", privacy: "Privacy", contact: "Contact" },
   home: {
+    hero_badge: "100% Free · No Signup · Privacy First",
     hero_title: "Free Online Tools for Everyone",
     hero_subtitle: "PDF, image, text, units, color, and developer tools.",
     features_title: "All Tools",

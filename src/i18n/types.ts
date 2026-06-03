@@ -13,6 +13,7 @@ export type Dictionary = {
     contact: string;
   };
   home: {
+    hero_badge: string;
     hero_title: string;
     hero_subtitle: string;
     features_title: string;
