@@ -1,8 +1,10 @@
 import { getAllPostSlugs, getPost } from "@/content/blog/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { buildPageMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   const locales: Locale[] = ["en", "zh", "ja", "es", "pt", "fr", "de"];
@@ -16,14 +18,30 @@ export async function generateStaticParams() {
   return params;
 }
 
-export function generateMetadata({ params }: { params: { locale: Locale; slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale; slug: string };
+}): Promise<Metadata> {
   const post = getPost(params.slug, params.locale);
   if (!post) return {};
-  return {
-    title: `${post.title} | UtilBoxx`,
+  const dict = await getDictionary(params.locale);
+  return buildPageMetadata({
+    locale: params.locale,
+    path: `blog/${params.slug}`,
+    title: `${post.title} | ${dict.site.title}`,
     description: post.description,
-    keywords: post.category,
-  };
+    keywords: [
+      post.category.toLowerCase(),
+      "tutorial",
+      "how-to",
+      "online tools",
+      ...dict.blog.subtitle.toLowerCase().split(/\s+/).filter((w) => w.length > 4),
+    ],
+    type: "article",
+    publishedTime: post.date,
+    modifiedTime: post.date,
+  });
 }
 
 // Tiny markdown renderer for the simple subset we use
@@ -160,8 +178,34 @@ export default async function BlogPostPage({ params }: { params: { locale: Local
   if (!post) notFound();
   const t = await getDictionary(params.locale);
 
+  // JSON-LD Article structured data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "UtilBoxx" },
+    publisher: {
+      "@type": "Organization",
+      name: "UtilBoxx",
+      url: "https://utilboxx.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://utilboxx.com/${params.locale}/blog/${params.slug}`,
+    },
+    inLanguage: params.locale,
+    articleSection: post.category,
+  };
+
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href={`/${params.locale}`} className="hover:text-blue-600">
           {t.nav.home}

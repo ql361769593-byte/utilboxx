@@ -13,10 +13,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return {
-    title: {
-      default: dict.site.title,
-      template: `%s | ${dict.site.title}`,
-    },
+    // No template — pages will set their own absolute title to avoid "Foo | UtilBoxx | UtilBoxx" duplication
+    title: dict.site.title,
     description: dict.site.description,
     keywords: dict.site.keywords,
     openGraph: {

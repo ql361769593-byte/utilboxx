@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import { type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return buildPageMetadata({
+    locale: params.locale,
+    path: "privacy",
+    title: `Privacy Policy | ${dict.site.title}`,
+    description:
+      "UtilBoxx privacy policy: no file uploads, no personal data, no tracking. All processing happens in your browser. Your files never touch our servers.",
+    keywords: ["privacy policy", "no tracking", "no data collection", "GDPR"],
+  });
+}
 
 export default async function PrivacyPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);

@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import Link from "next/link";
 import { Sparkles, Globe, Zap, Shield, Heart, Mail } from "lucide-react";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+export async function generateMetadata({ params }: { params: { locale: Locale } }): Promise<Metadata> {
   const dict = await getDictionary(params.locale);
-  return { title: dict.nav.about, description: dict.about.intro_p1 };
+  return buildPageMetadata({
+    locale: params.locale,
+    path: "about",
+    title: `About ${dict.site.title} - ${dict.site.tagline || "Free Online Tools"}`,
+    description: dict.about.intro_p1,
+    keywords: ["about", "UtilBoxx", "free tools", "mission", "privacy first"],
+  });
 }
 
 export default async function AboutPage({ params }: { params: { locale: Locale } }) {

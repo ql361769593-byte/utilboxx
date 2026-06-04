@@ -1,10 +1,32 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { tools, getToolsByCategory } from "@/i18n/tools";
 import { ToolCard } from "@/components/ToolCard";
+import { buildPageMetadata } from "@/lib/metadata";
 
 const categoryKeys = ["pdf", "image", "text", "unit", "color", "crypto", "dev"] as const;
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return buildPageMetadata({
+    locale: params.locale,
+    path: "tools",
+    title: `${dict.home.features_title} - ${tools.length} ${dict.ui.tools_count} | ${dict.site.title}`,
+    description: `Browse all ${tools.length} free online tools: PDF, image, text, unit converter, color, crypto, and developer tools. No signup, runs in your browser.`,
+    keywords: [
+      "all online tools",
+      "PDF tools",
+      "image tools",
+      "text tools",
+      "unit converter",
+      "color tools",
+      "crypto tools",
+      "developer tools",
+    ],
+  });
+}
 
 export default async function ToolsPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);

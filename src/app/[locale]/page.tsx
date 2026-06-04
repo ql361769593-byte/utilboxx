@@ -3,11 +3,72 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { tools } from "@/i18n/tools";
 import { ToolCard } from "@/components/ToolCard";
 import { Sparkles } from "lucide-react";
+import { buildPageMetadata } from "@/lib/metadata";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return buildPageMetadata({
+    locale: params.locale,
+    path: "",
+    title: dict.home.hero_title, // "Free Online Tools for Everyone"
+    description: dict.home.hero_subtitle,
+    keywords: [
+      "free online tools",
+      "PDF tools",
+      "image tools",
+      "text tools",
+      "unit converter",
+      "color picker",
+      "developer tools",
+      "no signup",
+    ],
+  });
+}
 
 export default async function HomePage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
+
+  // Structured data: WebSite + Organization + SoftwareApplication
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://utilboxx.com/#website",
+        url: "https://utilboxx.com",
+        name: "UtilBoxx",
+        description: dict.home.hero_subtitle,
+        inLanguage: ["en", "zh", "ja", "es", "pt", "fr", "de"],
+        publisher: { "@id": "https://utilboxx.com/#organization" },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://utilboxx.com/#organization",
+        name: "UtilBoxx",
+        url: "https://utilboxx.com",
+        logo: "https://utilboxx.com/logo.png",
+        sameAs: [],
+      },
+      {
+        "@type": "WebApplication",
+        name: "UtilBoxx",
+        url: "https://utilboxx.com",
+        applicationCategory: "UtilityApplication",
+        operatingSystem: "Any (browser-based)",
+        description: dict.home.hero_subtitle,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        browserRequirements: "Modern web browser with JavaScript enabled",
+      },
+    ],
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="gradient-bg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
