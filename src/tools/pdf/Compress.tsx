@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
 import { PDFDocument } from "pdf-lib";
+import { getPdfjs } from "./pdfjs-loader";
 
 type Level = "light" | "medium" | "strong";
 
@@ -84,8 +85,7 @@ export default function CompressPdf({ dict }: { dict: Dictionary }) {
           const scale = level === "medium" ? 1.5 : 1.0; // 150 DPI vs 100 DPI
           const quality = level === "medium" ? 0.75 : 0.6;
 
-          const pdfjs = await import("pdfjs-dist");
-          (pdfjs as any).GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs`;
+          const pdfjs = await getPdfjs();
           const pdf = await pdfjs.getDocument({ data: bytes.slice(0) }).promise;
           const jspdfMod = await import("jspdf");
           const { jsPDF } = jspdfMod;

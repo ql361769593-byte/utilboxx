@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
+import { getPdfjs } from "./pdfjs-loader";
 
 export default function PdfToImage({ dict }: { dict: Dictionary }) {
   const [format, setFormat] = useState<"png" | "jpeg">("png");
@@ -49,8 +50,7 @@ export default function PdfToImage({ dict }: { dict: Dictionary }) {
         processButtonText={dict.tools.pdf.toImage}
         onProcess={async (files) => {
           const file = files[0];
-          const pdfjs = await import("pdfjs-dist");
-          (pdfjs as any).GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs`;
+          const pdfjs = await getPdfjs();
           const bytes = await file.arrayBuffer();
           const pdf = await pdfjs.getDocument({ data: bytes }).promise;
           for (let i = 1; i <= pdf.numPages; i++) {

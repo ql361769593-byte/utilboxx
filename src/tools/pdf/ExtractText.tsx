@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import { CopyButton } from "@/components/UI";
 import type { Dictionary } from "@/i18n/types";
+import { getPdfjs } from "./pdfjs-loader";
 
 export default function ExtractText({ dict }: { dict: Dictionary }) {
   const [text, setText] = useState("");
@@ -17,8 +18,7 @@ export default function ExtractText({ dict }: { dict: Dictionary }) {
         onProcess={async (files) => {
           const file = files[0];
           setFileName(file.name);
-          const pdfjs = await import("pdfjs-dist");
-          (pdfjs as any).GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs`;
+          const pdfjs = await getPdfjs();
           const bytes = await file.arrayBuffer();
           const pdf = await pdfjs.getDocument({ data: bytes }).promise;
           let out = "";

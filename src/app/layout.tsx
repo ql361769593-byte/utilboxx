@@ -2,10 +2,22 @@ import "@/app/globals.css";
 import { locales, type Locale, defaultLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import { VercelInsights } from "@/components/VercelInsights";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const metadata: Metadata = {
+  // viewport 用 Metadata API（不是手动 <meta>，避免双重）
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#667eea",
+  // AdSense 验证必须：根 layout metadata 不参与子页 OG/hreflang
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: "/apple-icon.png",
+  },
+};
 
 export default async function RootLayout({
   children,
@@ -14,22 +26,21 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale?: string };
 }) {
-  // 静态导出时，root layout 拿不到子段 params.locale（子段是独立的 [locale] 段）
-  // [locale]/layout.tsx 会用 <script> 在 hydration 前修正 document.documentElement.lang
+  // 静态导出时，root layout 拿不到子段 params.locale
+  // [locale]/layout.tsx 用 <script> 注入 document.documentElement.lang='zh' 等
   // 这里默认 en 即可，根路径就应该是英文
   const lang = "en";
 
   return (
     <html lang={lang}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#667eea" />
-        {/* Favicon + Apple touch icon (Next.js 14 auto-generates from src/app/icon.svg, src/app/apple-icon.svg) */}
-        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-        {/* Google AdSense - must be in <head> */}
+        {/* Preconnect to pdfjs CDN (used by 9 PDF tools on demand) */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        {/* Google AdSense - must be in <head>, but defer to not block LCP */}
         <script
           async
+          // @ts-expect-error fetchPriority is valid HTML but not in React types yet
+          fetchPriority="low"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9345131467461923"
           crossOrigin="anonymous"
         />

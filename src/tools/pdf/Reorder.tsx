@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { FileTool, downloadBlob } from "@/components/FileTool";
 import type { Dictionary } from "@/i18n/types";
 import { PDFDocument } from "pdf-lib";
+import { getPdfjs } from "./pdfjs-loader";
 
 type PagePreview = {
   index: number; // 0-based original index
@@ -27,8 +28,7 @@ export default function ReorderPdf({ dict }: { dict: Dictionary }) {
     setOrder([]);
     try {
       const bytes = await f.arrayBuffer();
-      const pdfjs = await import("pdfjs-dist");
-      (pdfjs as any).GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs`;
+      const pdfjs = await getPdfjs();
       const pdf = await pdfjs.getDocument({ data: bytes.slice(0) }).promise;
       const out: PagePreview[] = [];
       for (let i = 1; i <= pdf.numPages; i++) {
