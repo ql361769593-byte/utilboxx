@@ -23,10 +23,17 @@ body {
   box-sizing: border-box;
 }
 
-/* 全局链接去下划线 */
+/* 默认链接：保留下划线以符合 a11y（链接不能仅靠颜色区分） */
 a {
-  text-decoration: none;
   color: inherit;
+}
+
+/* 导航/页脚/卡片标题：去下划线（视觉重复，无关 a11y） */
+nav a,
+header a,
+footer a,
+.no-underline {
+  text-decoration: none;
 }
 
 .gradient-bg {

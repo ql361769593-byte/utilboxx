@@ -9,29 +9,29 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white font-bold text-lg mb-3">UtilBoxx</h3>
-            <p className="text-sm">{dict.site.tagline}</p>
+            <p className="text-sm text-slate-300">{dict.site.tagline}</p>
           </div>
           <div>
             <h3 className="text-white font-bold mb-3">{dict.nav.tools}</h3>
             <ul className="space-y-1 text-sm">
-              <li><Link href={`/${locale}/tools/pdf`} className="hover:text-white">{dict.tools.category.pdf}</Link></li>
-              <li><Link href={`/${locale}/tools/image`} className="hover:text-white">{dict.tools.category.image}</Link></li>
-              <li><Link href={`/${locale}/tools/text`} className="hover:text-white">{dict.tools.category.text}</Link></li>
-              <li><Link href={`/${locale}/tools/unit`} className="hover:text-white">{dict.tools.category.unit}</Link></li>
+              <li><Link href={`/${locale}/tools/pdf`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.pdf}</Link></li>
+              <li><Link href={`/${locale}/tools/image`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.image}</Link></li>
+              <li><Link href={`/${locale}/tools/text`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.text}</Link></li>
+              <li><Link href={`/${locale}/tools/unit`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.unit}</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-white font-bold mb-3">{dict.nav.about}</h3>
             <ul className="space-y-1 text-sm">
-              <li><Link href={`/${locale}/about`} className="hover:text-white">{dict.nav.about}</Link></li>
-              <li><Link href={`/${locale}/contact`} className="hover:text-white">{dict.nav.contact}</Link></li>
-              <li><Link href={`/${locale}/privacy`} className="hover:text-white">{dict.nav.privacy}</Link></li>
+              <li><Link href={`/${locale}/about`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.nav.about}</Link></li>
+              <li><Link href={`/${locale}/contact`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.nav.contact}</Link></li>
+              <li><Link href={`/${locale}/privacy`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.nav.privacy}</Link></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
-          <p>{dict.footer.copyright}</p>
-          <p className="text-slate-500 mt-1">{dict.footer.made_with}</p>
+          <p className="text-slate-300">{dict.footer.copyright}</p>
+          <p className="text-slate-400 mt-1">{dict.footer.made_with}</p>
         </div>
       </div>
     </footer>
