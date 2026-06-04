@@ -286,5 +286,8 @@
     "readMore": "阅读更多",
     "empty": "暂无文章。",
     "backToList": "返回文章列表"
+  },
+  "faq": {
+    "title": "常见问题"
   }
 }

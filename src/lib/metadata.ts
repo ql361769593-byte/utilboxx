@@ -123,6 +123,12 @@ export function buildPageMetadata({
       description,
       images: [ogImage],
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   };
 }

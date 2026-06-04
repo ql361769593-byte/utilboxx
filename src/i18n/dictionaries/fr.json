@@ -286,5 +286,8 @@
     "readMore": "Lire plus",
     "empty": "Pas encore d'articles.",
     "backToList": "Retour à tous les articles"
+  },
+  "faq": {
+    "title": "Questions Fréquentes"
   }
 }

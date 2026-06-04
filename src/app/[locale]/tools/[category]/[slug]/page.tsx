@@ -51,52 +51,69 @@ export default async function ToolPage({
 
   const toolUrl = `https://utilboxx.com/${params.locale}/tools/${params.category}/${params.slug}`;
 
-  // JSON-LD: SoftwareApplication + BreadcrumbList
+  // JSON-LD: SoftwareApplication + BreadcrumbList + FAQPage (if FAQ exists)
+  const jsonLdGraph: any[] = [
+    {
+      "@type": "SoftwareApplication",
+      name,
+      description,
+      url: toolUrl,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Any (browser-based)",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      publisher: { "@type": "Organization", name: SITE_NAME },
+      inLanguage: params.locale,
+      browserRequirements: "Modern web browser with JavaScript enabled",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: dict.nav.home,
+          item: `https://utilboxx.com/${params.locale}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: dict.nav.tools,
+          item: `https://utilboxx.com/${params.locale}/tools`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: categoryName,
+          item: `https://utilboxx.com/${params.locale}/tools/${params.category}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name,
+          item: toolUrl,
+        },
+      ],
+    },
+  ];
+
+  // 加 FAQ JSON-LD（如有 FAQ 数据）
+  if (tool.faq && tool.faq.length > 0) {
+    jsonLdGraph.push({
+      "@type": "FAQPage",
+      mainEntity: tool.faq.map((f) => ({
+        "@type": "Question",
+        name: f.question[params.locale],
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer[params.locale],
+        },
+      })),
+    });
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        name,
-        description,
-        url: toolUrl,
-        applicationCategory: "UtilitiesApplication",
-        operatingSystem: "Any (browser-based)",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: { "@type": "Organization", name: SITE_NAME },
-        inLanguage: params.locale,
-        browserRequirements: "Modern web browser with JavaScript enabled",
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: dict.nav.home,
-            item: `https://utilboxx.com/${params.locale}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: dict.nav.tools,
-            item: `https://utilboxx.com/${params.locale}/tools`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: categoryName,
-            item: `https://utilboxx.com/${params.locale}/tools/${params.category}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name,
-            item: toolUrl,
-          },
-        ],
-      },
-    ],
+    "@graph": jsonLdGraph,
   };
 
   return (
@@ -124,6 +141,31 @@ export default async function ToolPage({
       <div className="bg-white border border-slate-200 rounded-xl p-6">
         <ToolClient toolSlug={tool.slug} locale={params.locale} />
       </div>
+
+      {/* FAQ section (Google Rich Cards + on-page UX) */}
+      {tool.faq && tool.faq.length > 0 && (
+        <section className="mt-12" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" className="text-2xl font-bold text-slate-900 mb-6">
+            {dict.faq?.title || "Frequently Asked Questions"}
+          </h2>
+          <div className="space-y-3">
+            {tool.faq.map((f, i) => (
+              <details
+                key={i}
+                className="bg-white border border-slate-200 rounded-lg p-4 open:bg-slate-50"
+              >
+                <summary className="font-medium text-slate-900 cursor-pointer list-none flex items-start gap-2">
+                  <span className="text-blue-600 mt-0.5 select-none" aria-hidden="true">+</span>
+                  <span>{f.question[params.locale]}</span>
+                </summary>
+                <p className="mt-3 text-slate-700 leading-relaxed pl-6">
+                  {f.answer[params.locale]}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

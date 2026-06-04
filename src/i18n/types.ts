@@ -254,4 +254,7 @@ export type Dictionary = {
     empty: string;
     backToList: string;
   };
+  faq: {
+    title: string;
+  };
 };

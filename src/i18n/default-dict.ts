@@ -119,4 +119,7 @@ export const defaultDict: Dictionary = {
     empty: "No articles yet.",
     backToList: "Back to all articles",
   },
+  faq: {
+    title: "Frequently Asked Questions",
+  },
 };
