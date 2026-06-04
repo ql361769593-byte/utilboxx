@@ -2,16 +2,19 @@ import "@/app/globals.css";
 import { locales, type Locale, defaultLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import { VercelInsights } from "@/components/VercelInsights";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  // viewport 用 Metadata API（不是手动 <meta>，避免双重）
-  viewport: "width=device-width, initial-scale=1",
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#667eea",
+};
+
+export const metadata: Metadata = {
   // AdSense 验证必须：根 layout metadata 不参与子页 OG/hreflang
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],

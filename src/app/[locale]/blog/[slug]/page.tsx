@@ -5,6 +5,13 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { buildPageMetadata } from "@/lib/metadata";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#667eea",
+};
 
 export async function generateStaticParams() {
   const locales: Locale[] = ["en", "zh", "ja", "es", "pt", "fr", "de"];
