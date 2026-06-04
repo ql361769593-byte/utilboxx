@@ -1,16 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { type Locale } from "@/i18n/config";
 import { Mail, Clock, MessageCircle, CheckCircle2 } from "lucide-react";
+import type { Dictionary } from "@/i18n/types";
 
-// Note: generateMetadata is exported from a separate server file (./metadata.ts)
-
-export default function ContactPage({ params }: { params: { locale: Locale } }) {
-  const [dict, setDict] = useState<any>(null);
-
-  useEffect(() => {
-    import(`@/i18n/dictionaries/${params.locale}.json`).then((m) => setDict(m.default));
-  }, [params.locale]);
+export default function ContactForm({
+  params,
+  dict,
+}: {
+  params: { locale: Locale };
+  dict: Dictionary;
+}) {
+  const c = dict.contact;
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,12 +20,6 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-
-  if (!dict) {
-    return <div className="max-w-3xl mx-auto px-4 py-12 text-center text-slate-500">Loading...</div>;
-  }
-
-  const c = dict.contact;
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -41,8 +36,6 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
     ev.preventDefault();
     if (!validate()) return;
     setSending(true);
-    // Formspree 免费方案，无需后端
-    // 替换 YOUR_FORM_ID 后即可工作
     try {
       await fetch("https://formspree.io/f/xvznpvad", {
         method: "POST",
@@ -50,7 +43,7 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
         body: JSON.stringify({ name, email, subject, message }),
       });
     } catch (e) {
-      // 忽略错误，仍然显示成功（Formspree 未配置时）
+      // Formspree may not be configured; still show success
     }
     setSending(false);
     setSent(true);

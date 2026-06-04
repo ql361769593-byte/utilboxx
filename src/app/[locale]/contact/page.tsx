@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default function ContactPage({ params }: { params: { locale: Locale } }) {
-  return <ContactForm params={params} />;
+export default async function ContactPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return <ContactForm params={params} dict={dict} />;
 }
