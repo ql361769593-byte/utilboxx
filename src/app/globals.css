@@ -28,6 +28,13 @@ a {
   color: inherit;
 }
 
+/* 文章正文链接：默认带下划线（a11y: 链接不能仅靠颜色区分） */
+.prose-content a,
+article a:not(.no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* 导航/页脚/卡片标题：去下划线（视觉重复，无关 a11y） */
 nav a,
 header a,
