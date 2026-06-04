@@ -30,8 +30,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div className="grid grid-cols-3 items-center h-16">
           {/* 左：Logo */}
           <div className="flex items-center">
-            <Link href={`/${locale}`} className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
+            <Link href={`/${locale}`} className="flex items-center gap-2" aria-label="UtilBoxx home">
+              <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center" aria-hidden="true">
                 <Wrench className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-slate-900">UtilBoxx</span>
@@ -39,7 +39,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           {/* 中：主导航（居中）*/}
-          <nav className="hidden md:flex items-center justify-center gap-8">
+          <nav className="hidden md:flex items-center justify-center gap-8" aria-label="Main navigation">
             <Link
               href={`/${locale}`}
               className="text-sm font-medium text-slate-700 hover:text-blue-600 transition"
@@ -91,9 +91,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2 rounded hover:bg-slate-100"
-              aria-label="Toggle menu"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>

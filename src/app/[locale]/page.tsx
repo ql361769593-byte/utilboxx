@@ -47,7 +47,12 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
         "@id": "https://utilboxx.com/#organization",
         name: "UtilBoxx",
         url: "https://utilboxx.com",
-        logo: "https://utilboxx.com/logo.png",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://utilboxx.com/icon.svg",
+          width: 64,
+          height: 64,
+        },
         sameAs: [],
       },
       {
@@ -59,6 +64,8 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
         description: dict.home.hero_subtitle,
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         browserRequirements: "Modern web browser with JavaScript enabled",
+        image: `https://utilboxx.com/og-${params.locale}.png`,
+        inLanguage: params.locale,
       },
     ],
   };
@@ -73,7 +80,7 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
       <section className="gradient-bg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm mb-6">
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4" aria-hidden="true" />
             <span>{dict.home.hero_badge}</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

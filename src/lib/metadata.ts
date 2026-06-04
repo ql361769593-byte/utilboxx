@@ -88,7 +88,7 @@ export function buildPageMetadata({
   }
   languages["x-default"] = canonicalFor("en", path);
 
-  const ogImage = `${SITE_URL}${imagePath || "/og/default.png"}`;
+  const ogImage = `${SITE_URL}${imagePath || (locale === "en" ? "/og-default.png" : `/og-${locale}.png`)}`;
 
   return {
     title,
@@ -105,6 +105,7 @@ export function buildPageMetadata({
       locale: ogLocaleMap[locale],
       url: canonical,
       siteName: SITE_NAME,
+      // locale:alternate 由 alternates.languages 处理（hreflang 同等效力）
       images: [
         {
           url: ogImage,

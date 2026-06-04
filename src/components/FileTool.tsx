@@ -57,7 +57,7 @@ export function FileTool({
         }}
         onDragLeave={() => setDragOver(false)}
       >
-        <Upload className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+        <Upload className="w-10 h-10 text-slate-400 mx-auto mb-3" aria-hidden="true" />
         <p className="text-slate-700 font-medium">{dict.ui.choose_file}</p>
         <p className="text-sm text-slate-500 mt-1">{dict.ui.drop_file_here}</p>
         <input
@@ -96,7 +96,7 @@ export function FileTool({
       >
         {processing ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
             {dict.common.loading}
           </>
         ) : (

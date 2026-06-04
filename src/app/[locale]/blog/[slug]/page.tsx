@@ -191,6 +191,12 @@ export default async function BlogPostPage({ params }: { params: { locale: Local
       "@type": "Organization",
       name: "UtilBoxx",
       url: "https://utilboxx.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://utilboxx.com/icon.svg",
+        width: 64,
+        height: 64,
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -198,6 +204,9 @@ export default async function BlogPostPage({ params }: { params: { locale: Local
     },
     inLanguage: params.locale,
     articleSection: post.category,
+    image: [
+      `https://utilboxx.com/og-${params.locale}.png`,
+    ],
   };
 
   return (

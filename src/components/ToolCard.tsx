@@ -95,6 +95,7 @@ export function ToolIcon({ name, category }: { name: string; category: string })
   return (
     <div
       className={`w-12 h-12 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shrink-0`}
+      aria-hidden="true"
     >
       <Icon className="w-6 h-6" />
     </div>
