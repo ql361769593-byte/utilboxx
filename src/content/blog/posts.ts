@@ -41,6 +41,40 @@ import { unixTimestampPost } from "./post27";
 import { qrCodePost } from "./post28";
 import { unixTimestampsDevPost } from "./post29";
 import { strongPasswordsPost } from "./post30";
+import { addPageNumbersPost } from "./post31";
+import { signPdfPost } from "./post32";
+import { editMetadataPost } from "./post33";
+import { headerFooterPost } from "./post34";
+import { comparePdfPost } from "./post35";
+import { cropPdfPost } from "./post36";
+import { rotateImagePost } from "./post37";
+import { flipImagePost } from "./post38";
+import { imageToBase64Post } from "./post39";
+import { removeExifPost } from "./post40";
+import { blurImagePost } from "./post41";
+import { upscaleImagePost } from "./post42";
+import { createMemePost } from "./post43";
+import { reverseTextPost } from "./post44";
+import { sortLinesPost } from "./post45";
+import { loremIpsumPost } from "./post46";
+import { markdownPreviewPost } from "./post47";
+import { fancyTextPost } from "./post48";
+import { rot13Post } from "./post49";
+import { pressurePost } from "./post50";
+import { energyPost } from "./post51";
+import { powerPost } from "./post52";
+import { fuelPost } from "./post53";
+import { cssGradientPost } from "./post54";
+import { contrastCheckerPost } from "./post55";
+import { colorMixerPost } from "./post56";
+import { namedColorsPost } from "./post57";
+import { jwtDecoderPost } from "./post58";
+import { hmacGeneratorPost } from "./post59";
+import { fileChecksumPost } from "./post60";
+import { yamlJsonPost } from "./post61";
+import { csvJsonPost } from "./post62";
+import { sqlFormatterPost } from "./post63";
+import { xmlFormatterPost } from "./post64";
 
 export const blogPosts: Record<string, Record<string, BlogPost>> = {
   "how-to-merge-pdf-files": mergePdfPost,
@@ -72,6 +106,40 @@ export const blogPosts: Record<string, Record<string, BlogPost>> = {
   "how-to-generate-qr-code": qrCodePost,
   "understanding-unix-timestamps": unixTimestampsDevPost,
   "how-to-create-strong-passwords": strongPasswordsPost,
+  "how-to-add-page-numbers-to-pdf": addPageNumbersPost,
+  "how-to-sign-pdf-electronically": signPdfPost,
+  "how-to-edit-pdf-metadata": editMetadataPost,
+  "how-to-add-header-and-footer-to-pdf": headerFooterPost,
+  "how-to-compare-pdf-files": comparePdfPost,
+  "how-to-crop-pdf-pages": cropPdfPost,
+  "how-to-rotate-images-any-angle": rotateImagePost,
+  "how-to-flip-or-mirror-images": flipImagePost,
+  "how-to-convert-image-to-base64": imageToBase64Post,
+  "how-to-remove-exif-data-from-photos": removeExifPost,
+  "how-to-blur-an-image": blurImagePost,
+  "how-to-upscale-images-without-losing-quality": upscaleImagePost,
+  "how-to-create-memes-online": createMemePost,
+  "how-to-reverse-text": reverseTextPost,
+  "how-to-sort-text-lines": sortLinesPost,
+  "what-is-lorem-ipsum": loremIpsumPost,
+  "how-to-preview-markdown": markdownPreviewPost,
+  "how-to-use-fancy-text": fancyTextPost,
+  "what-is-rot13-cipher": rot13Post,
+  "pressure-units-explained": pressurePost,
+  "energy-units-explained": energyPost,
+  "power-units-explained": powerPost,
+  "fuel-economy-mpg-vs-l100km": fuelPost,
+  "how-to-create-css-gradient": cssGradientPost,
+  "wcag-color-contrast-guide": contrastCheckerPost,
+  "how-to-mix-colors": colorMixerPost,
+  "css-named-colors-complete-list": namedColorsPost,
+  "how-to-decode-jwt-tokens": jwtDecoderPost,
+  "how-to-generate-hmac-signatures": hmacGeneratorPost,
+  "how-to-compute-file-checksum": fileChecksumPost,
+  "yaml-vs-json-comparison": yamlJsonPost,
+  "csv-vs-json-comparison": csvJsonPost,
+  "how-to-format-sql-queries": sqlFormatterPost,
+  "how-to-format-xml-documents": xmlFormatterPost,
 };
 
 export const getAllPostSlugs = () => Object.keys(blogPosts);
