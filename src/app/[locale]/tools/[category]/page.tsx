@@ -4,6 +4,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { getToolsByCategory } from "@/i18n/tools";
 import { ToolCard } from "@/components/ToolCard";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { buildPageMetadata } from "@/lib/metadata";
 
 const categoryKeys = ["pdf", "image", "text", "unit", "color", "crypto", "dev"] as const;
@@ -43,6 +44,8 @@ export default async function CategoryPage({
 }) {
   const dict = await getDictionary(params.locale);
   const cat = params.category as (typeof categoryKeys)[number];
+  // 无效 category（如 /tools/nonexistent）应返回 404，不渲染空页
+  if (!categoryKeys.includes(cat)) notFound();
   const catTools = getToolsByCategory(cat);
   const catName = dict.tools.category[cat];
 
