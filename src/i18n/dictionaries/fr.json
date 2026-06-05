@@ -60,6 +60,7 @@
       "crypto": "Outils Crypto",
       "dev": "Outils Développeur"
     },
+    "relatedTools": "Outils associés",
     "pdf": {
       "merge": "Fusionner PDF",
       "split": "Diviser PDF",
@@ -285,7 +286,10 @@
     "subtitle": "Guides pratiques, conseils et tutoriels pour les outils numériques quotidiens.",
     "readMore": "Lire plus",
     "empty": "Pas encore d'articles.",
-    "backToList": "Retour à tous les articles"
+    "backToList": "Retour à tous les articles",
+    "prev": "Article précédent",
+    "next": "Article suivant",
+    "related": "Articles liés"
   },
   "faq": {
     "title": "Questions Fréquentes"

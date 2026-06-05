@@ -60,6 +60,7 @@
       "crypto": "Crypto Tools",
       "dev": "Developer Tools"
     },
+    "relatedTools": "Related Tools",
     "pdf": {
       "merge": "Merge PDF",
       "split": "Split PDF",
@@ -285,7 +286,10 @@
     "subtitle": "Practical guides, tips, and tutorials for everyday digital tools.",
     "readMore": "Read more",
     "empty": "No articles yet.",
-    "backToList": "Back to all articles"
+    "backToList": "Back to all articles",
+    "prev": "Previous article",
+    "next": "Next article",
+    "related": "Related Articles"
   },
   "faq": {
     "title": "Frequently Asked Questions"

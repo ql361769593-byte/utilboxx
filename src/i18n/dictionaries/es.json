@@ -60,6 +60,7 @@
       "crypto": "Herramientas Cripto",
       "dev": "Herramientas de Desarrollador"
     },
+    "relatedTools": "Herramientas relacionadas",
     "pdf": {
       "merge": "Combinar PDF",
       "split": "Dividir PDF",
@@ -285,7 +286,10 @@
     "subtitle": "Guías prácticas, consejos y tutoriales para herramientas digitales cotidianas.",
     "readMore": "Leer más",
     "empty": "Aún no hay artículos.",
-    "backToList": "Volver a todos los artículos"
+    "backToList": "Volver a todos los artículos",
+    "prev": "Artículo anterior",
+    "next": "Artículo siguiente",
+    "related": "Artículos relacionados"
   },
   "faq": {
     "title": "Preguntas Frecuentes"

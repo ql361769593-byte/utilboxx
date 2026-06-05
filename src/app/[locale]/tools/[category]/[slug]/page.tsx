@@ -142,6 +142,38 @@ export default async function ToolPage({
         <ToolClient toolSlug={tool.slug} locale={params.locale} />
       </div>
 
+      {/* Related tools (same category, exclude self, max 4) */}
+      {(() => {
+        const relatedTools = tools
+          .filter((t) => t.category === tool.category && t.slug !== tool.slug)
+          .slice(0, 4);
+        if (relatedTools.length === 0) return null;
+        return (
+          <section className="mt-12" aria-labelledby="related-tools-heading">
+            <h2 id="related-tools-heading" className="text-2xl font-bold text-slate-900 mb-4">
+              {dict.tools.relatedTools || "Related Tools"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {relatedTools.map((rt) => {
+                const rtCat = rt.category;
+                const rtSlug = rt.slug.split("/")[1];
+                return (
+                  <Link
+                    key={rt.slug}
+                    href={`/${params.locale}/tools/${rtCat}/${rtSlug}`}
+                    className="block p-4 border border-slate-200 rounded-lg hover:border-blue-500 hover:shadow-md transition"
+                  >
+                    <div className="text-xs text-blue-600 mb-1">{categoryName}</div>
+                    <div className="font-medium text-slate-900">{rt.name[params.locale]}</div>
+                    <div className="text-sm text-slate-600 line-clamp-2 mt-1">{rt.description[params.locale]}</div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
+
       {/* FAQ section (Google Rich Cards + on-page UX) */}
       {tool.faq && tool.faq.length > 0 && (
         <section className="mt-12" aria-labelledby="faq-heading">

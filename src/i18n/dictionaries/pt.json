@@ -60,6 +60,7 @@
       "crypto": "Ferramentas Cripto",
       "dev": "Ferramentas de Desenvolvedor"
     },
+    "relatedTools": "Ferramentas relacionadas",
     "pdf": {
       "merge": "Mesclar PDF",
       "split": "Dividir PDF",
@@ -285,7 +286,10 @@
     "subtitle": "Guias práticos, dicas e tutoriais para ferramentas digitais do dia a dia.",
     "readMore": "Leia mais",
     "empty": "Ainda não há artigos.",
-    "backToList": "Voltar para todos os artigos"
+    "backToList": "Voltar para todos os artigos",
+    "prev": "Artigo anterior",
+    "next": "Próximo artigo",
+    "related": "Artigos relacionados"
   },
   "faq": {
     "title": "Perguntas Frequentes"

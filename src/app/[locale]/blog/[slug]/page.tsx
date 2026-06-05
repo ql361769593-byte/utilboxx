@@ -185,6 +185,24 @@ export default async function BlogPostPage({ params }: { params: { locale: Local
   if (!post) notFound();
   const t = await getDictionary(params.locale);
 
+  // Related articles: same category, exclude self, max 3
+  const allSlugs = getAllPostSlugs();
+  const related = allSlugs
+    .filter((s) => s !== params.slug)
+    .map((s) => getPost(s, params.locale))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined)
+    .filter((p) => p.category === post.category)
+    .slice(0, 3);
+
+  // Prev/Next by date (newest first ordering)
+  const allByDate = allSlugs
+    .map((s) => getPost(s, params.locale))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  const currentIdx = allByDate.findIndex((p) => p.slug === params.slug);
+  const prev = currentIdx > 0 ? allByDate[currentIdx - 1] : null;
+  const next = currentIdx < allByDate.length - 1 ? allByDate[currentIdx + 1] : null;
+
   // JSON-LD Article structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -245,6 +263,50 @@ export default async function BlogPostPage({ params }: { params: { locale: Local
       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">{post.description}</p>
 
       <div className="prose-content">{renderMarkdown(post.content)}</div>
+
+      {/* Prev/Next navigation by date */}
+      <nav className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 grid grid-cols-1 md:grid-cols-2 gap-4" aria-label="Article navigation">
+        {prev ? (
+          <Link
+            href={`/${params.locale}/blog/${prev.slug}`}
+            className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 hover:shadow-sm transition"
+          >
+            <div className="text-xs text-gray-500 mb-1">← {t.blog?.prev || "Previous"}</div>
+            <div className="font-medium text-gray-900 dark:text-white line-clamp-2">{prev.title}</div>
+          </Link>
+        ) : <div />}
+        {next ? (
+          <Link
+            href={`/${params.locale}/blog/${next.slug}`}
+            className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 hover:shadow-sm transition md:text-right"
+          >
+            <div className="text-xs text-gray-500 mb-1">{t.blog?.next || "Next"} →</div>
+            <div className="font-medium text-gray-900 dark:text-white line-clamp-2">{next.title}</div>
+          </Link>
+        ) : <div />}
+      </nav>
+
+      {/* Related articles (same category) */}
+      {related.length > 0 && (
+        <section className="mt-12" aria-labelledby="related-heading">
+          <h2 id="related-heading" className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {t.blog?.related || "Related Articles"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {related.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/${params.locale}/blog/${p.slug}`}
+                className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 hover:shadow-md transition"
+              >
+                <div className="text-xs text-blue-600 dark:text-blue-400 mb-2">{p.category}</div>
+                <div className="font-medium text-gray-900 dark:text-white line-clamp-2 mb-2">{p.title}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{p.description}</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
         <Link href={`/${params.locale}/blog`} className="text-blue-600 dark:text-blue-400 hover:underline">

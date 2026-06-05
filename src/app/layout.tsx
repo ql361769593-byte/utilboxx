@@ -39,6 +39,13 @@ export default async function RootLayout({
       <head>
         {/* Preconnect to pdfjs CDN (used by 9 PDF tools on demand) */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        {/* RSS feed autodiscovery */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="UtilBoxx Blog"
+          href="/feed.xml"
+        />
         {/* Google AdSense - must be in <head>, but defer to not block LCP */}
         <script
           async

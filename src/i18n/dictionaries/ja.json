@@ -60,6 +60,7 @@
       "crypto": "暗号ツール",
       "dev": "開発者ツール"
     },
+    "relatedTools": "関連ツール",
     "pdf": {
       "merge": "PDF 結合",
       "split": "PDF 分割",
@@ -285,7 +286,10 @@
     "subtitle": "日常のデジタルツールに関する実用的なガイド、ヒント、チュートリアル。",
     "readMore": "続きを読む",
     "empty": "まだ記事がありません。",
-    "backToList": "記事一覧に戻る"
+    "backToList": "記事一覧に戻る",
+    "prev": "前の記事",
+    "next": "次の記事",
+    "related": "関連記事"
   },
   "faq": {
     "title": "よくある質問"
