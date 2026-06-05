@@ -71,21 +71,42 @@
       "rotate": "Rotate PDF",
       "extractImages": "Extract Images",
       "extractText": "Extract Text",
-      "reorder": "Reorder Pages"
+      "reorder": "Reorder Pages",
+      "protect": "Protect PDF",
+      "unlock": "Unlock PDF",
+      "pageNumbers": "Add Page Numbers",
+      "sign": "Sign PDF",
+      "metadata": "Edit Metadata",
+      "headerFooter": "Header & Footer",
+      "compare": "Compare PDFs",
+      "cropPdf": "Crop PDF"
     },
     "image": {
       "compress": "Compress Image",
       "resize": "Resize Image",
       "crop": "Crop Image",
       "convert": "Convert Image",
-      "addWatermark": "Add Watermark"
+      "addWatermark": "Add Watermark",
+      "rotate": "Rotate Image",
+      "flip": "Flip Image",
+      "base64": "Image to Base64",
+      "exif": "Remove EXIF",
+      "blur": "Blur Image",
+      "upscale": "Upscale Image",
+      "meme": "Meme Generator"
     },
     "text": {
       "charCount": "Character Count",
       "caseConvert": "Case Converter",
       "duplicate": "Remove Duplicates",
       "diff": "Text Diff",
-      "regex": "Regex Tester"
+      "regex": "Regex Tester",
+      "reverse": "Reverse Text",
+      "sort": "Sort Lines",
+      "lorem": "Lorem Ipsum",
+      "markdown": "Markdown Preview",
+      "fancy": "Fancy Text",
+      "rot13": "ROT13"
     },
     "unit": {
       "length": "Length",
@@ -95,24 +116,39 @@
       "volume": "Volume",
       "speed": "Speed",
       "data": "Data Storage",
-      "time": "Time"
+      "time": "Time",
+      "pressure": "Pressure",
+      "energy": "Energy",
+      "power": "Power",
+      "fuel": "Fuel Economy"
     },
     "color": {
       "picker": "Color Picker",
       "hexToRgb": "HEX/RGB Converter",
-      "palette": "Palette Generator"
+      "palette": "Palette Generator",
+      "gradient": "CSS Gradient",
+      "contrast": "Contrast Checker",
+      "mixer": "Color Mixer",
+      "named": "Named Colors"
     },
     "crypto": {
       "hash": "Hash Generator",
       "base64": "Base64 Encode/Decode",
       "urlEncode": "URL Encode/Decode",
-      "uuid": "UUID Generator"
+      "uuid": "UUID Generator",
+      "jwt": "JWT Decoder",
+      "hmac": "HMAC Generator",
+      "checksum": "File Checksum"
     },
     "dev": {
       "jsonFormat": "JSON Formatter",
       "timestamp": "Timestamp Converter",
       "qrcode": "QR Code Generator",
-      "password": "Password Generator"
+      "password": "Password Generator",
+      "yamlJson": "YAML ⇄ JSON",
+      "csv": "CSV ⇄ JSON",
+      "sql": "SQL Formatter",
+      "xml": "XML Formatter"
     }
   },
   "common": {

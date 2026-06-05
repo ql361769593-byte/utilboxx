@@ -38,7 +38,43 @@ export type ToolSlug =
   | "dev/json-format"
   | "dev/timestamp"
   | "dev/qrcode"
-  | "dev/password";
+  | "dev/password"
+  | "pdf/protect"
+  | "pdf/unlock"
+  | "pdf/page-numbers"
+  | "pdf/sign"
+  | "pdf/metadata"
+  | "pdf/header-footer"
+  | "pdf/compare"
+  | "pdf/cropPdf"
+  | "image/rotate"
+  | "image/flip"
+  | "image/base64"
+  | "image/exif"
+  | "image/blur"
+  | "image/upscale"
+  | "image/meme"
+  | "text/reverse"
+  | "text/sort"
+  | "text/lorem"
+  | "text/markdown"
+  | "text/fancy"
+  | "text/rot13"
+  | "unit/pressure"
+  | "unit/energy"
+  | "unit/power"
+  | "unit/fuel"
+  | "color/gradient"
+  | "color/contrast"
+  | "color/mixer"
+  | "color/named"
+  | "crypto/jwt"
+  | "crypto/hmac"
+  | "crypto/checksum"
+  | "dev/yamlJson"
+  | "dev/csv"
+  | "dev/sql"
+  | "dev/xml";
 
 export type Tool = {
   slug: ToolSlug;
@@ -149,6 +185,79 @@ export const tools: Tool[] = [
   { slug: "dev/timestamp", category: "dev", icon: "Timer", name: { en: "Timestamp Converter", zh: "时间戳转换", ja: "タイムスタンプ変換", es: "Conversor Timestamp", pt: "Conversor Timestamp", fr: "Convertisseur Timestamp", de: "Zeitstempel-Konverter" }, description: { en: "Convert between Unix timestamps and dates", zh: "Unix 时间戳和日期之间转换", ja: "Unix タイムスタンプと日付の間で変換", es: "Convertir entre timestamps Unix y fechas", pt: "Converter entre timestamps Unix e datas", fr: "Convertir entre timestamps Unix et dates", de: "Zwischen Unix-Zeitstempeln und Daten umrechnen" } },
   { slug: "dev/qrcode", category: "dev", icon: "QrCode", name: { en: "QR Code Generator", zh: "QR 码生成", ja: "QR コード生成", es: "Generador QR", pt: "Gerador QR", fr: "Générateur QR", de: "QR-Code-Generator" }, description: { en: "Generate QR codes from text or URLs", zh: "从文本或 URL 生成 QR 码", ja: "テキストまたは URL から QR コードを生成", es: "Generar códigos QR desde texto o URLs", pt: "Gerar códigos QR de texto ou URLs", fr: "Générer des codes QR à partir de texte ou d'URLs", de: "QR-Codes aus Text oder URLs generieren" } },
   { slug: "dev/password", category: "dev", icon: "Key", name: { en: "Password Generator", zh: "密码生成", ja: "パスワード生成", es: "Generador de Contraseña", pt: "Gerador de Senha", fr: "Générateur de Mot de Passe", de: "Passwort-Generator" }, description: { en: "Generate strong random passwords", zh: "生成强随机密码", ja: "強力なランダムパスワードを生成", es: "Generar contraseñas aleatorias seguras", pt: "Gerar senhas aleatórias fortes", fr: "Générer des mots de passe aléatoires forts", de: "Starke zufällige Passwörter generieren" } },
+
+  // New tools (will be translated by subagent)
+  { slug: "pdf/protect", category: "pdf", icon: "Lock", name: { en: "Protect PDF", zh: "Protect PDF", ja: "Protect PDF", es: "Protect PDF", pt: "Protect PDF", fr: "Protect PDF", de: "Protect PDF" }, description: { en: "Add password to PDF", zh: "Add password to PDF", ja: "Add password to PDF", es: "Add password to PDF", pt: "Add password to PDF", fr: "Add password to PDF", de: "Add password to PDF" } },
+
+  { slug: "pdf/unlock", category: "pdf", icon: "LockOpen", name: { en: "Unlock PDF", zh: "Unlock PDF", ja: "Unlock PDF", es: "Unlock PDF", pt: "Unlock PDF", fr: "Unlock PDF", de: "Unlock PDF" }, description: { en: "Remove password from PDF", zh: "Remove password from PDF", ja: "Remove password from PDF", es: "Remove password from PDF", pt: "Remove password from PDF", fr: "Remove password from PDF", de: "Remove password from PDF" } },
+
+  { slug: "pdf/page-numbers", category: "pdf", icon: "ListOrdered", name: { en: "Add Page Numbers", zh: "Add Page Numbers", ja: "Add Page Numbers", es: "Add Page Numbers", pt: "Add Page Numbers", fr: "Add Page Numbers", de: "Add Page Numbers" }, description: { en: "Stamp page numbers on PDF", zh: "Stamp page numbers on PDF", ja: "Stamp page numbers on PDF", es: "Stamp page numbers on PDF", pt: "Stamp page numbers on PDF", fr: "Stamp page numbers on PDF", de: "Stamp page numbers on PDF" } },
+
+  { slug: "pdf/sign", category: "pdf", icon: "PenTool", name: { en: "Sign PDF", zh: "Sign PDF", ja: "Sign PDF", es: "Sign PDF", pt: "Sign PDF", fr: "Sign PDF", de: "Sign PDF" }, description: { en: "Draw or type signature on PDF", zh: "Draw or type signature on PDF", ja: "Draw or type signature on PDF", es: "Draw or type signature on PDF", pt: "Draw or type signature on PDF", fr: "Draw or type signature on PDF", de: "Draw or type signature on PDF" } },
+
+  { slug: "pdf/metadata", category: "pdf", icon: "FileCog", name: { en: "Edit Metadata", zh: "Edit Metadata", ja: "Edit Metadata", es: "Edit Metadata", pt: "Edit Metadata", fr: "Edit Metadata", de: "Edit Metadata" }, description: { en: "Edit PDF title/author/subject", zh: "Edit PDF title/author/subject", ja: "Edit PDF title/author/subject", es: "Edit PDF title/author/subject", pt: "Edit PDF title/author/subject", fr: "Edit PDF title/author/subject", de: "Edit PDF title/author/subject" } },
+
+  { slug: "pdf/header-footer", category: "pdf", icon: "Heading1", name: { en: "Header & Footer", zh: "Header & Footer", ja: "Header & Footer", es: "Header & Footer", pt: "Header & Footer", fr: "Header & Footer", de: "Header & Footer" }, description: { en: "Add header/footer with text", zh: "Add header/footer with text", ja: "Add header/footer with text", es: "Add header/footer with text", pt: "Add header/footer with text", fr: "Add header/footer with text", de: "Add header/footer with text" } },
+
+  { slug: "pdf/compare", category: "pdf", icon: "GitCompare", name: { en: "Compare PDFs", zh: "Compare PDFs", ja: "Compare PDFs", es: "Compare PDFs", pt: "Compare PDFs", fr: "Compare PDFs", de: "Compare PDFs" }, description: { en: "Side-by-side PDF comparison", zh: "Side-by-side PDF comparison", ja: "Side-by-side PDF comparison", es: "Side-by-side PDF comparison", pt: "Side-by-side PDF comparison", fr: "Side-by-side PDF comparison", de: "Side-by-side PDF comparison" } },
+
+  { slug: "pdf/cropPdf", category: "pdf", icon: "Crop", name: { en: "Crop PDF", zh: "Crop PDF", ja: "Crop PDF", es: "Crop PDF", pt: "Crop PDF", fr: "Crop PDF", de: "Crop PDF" }, description: { en: "Crop PDF page margins", zh: "Crop PDF page margins", ja: "Crop PDF page margins", es: "Crop PDF page margins", pt: "Crop PDF page margins", fr: "Crop PDF page margins", de: "Crop PDF page margins" } },
+
+  { slug: "image/rotate", category: "image", icon: "RotateCw", name: { en: "Rotate Image", zh: "Rotate Image", ja: "Rotate Image", es: "Rotate Image", pt: "Rotate Image", fr: "Rotate Image", de: "Rotate Image" }, description: { en: "Rotate image by any angle", zh: "Rotate image by any angle", ja: "Rotate image by any angle", es: "Rotate image by any angle", pt: "Rotate image by any angle", fr: "Rotate image by any angle", de: "Rotate image by any angle" } },
+
+  { slug: "image/flip", category: "image", icon: "FlipHorizontal2", name: { en: "Flip Image", zh: "Flip Image", ja: "Flip Image", es: "Flip Image", pt: "Flip Image", fr: "Flip Image", de: "Flip Image" }, description: { en: "Flip horizontal or vertical", zh: "Flip horizontal or vertical", ja: "Flip horizontal or vertical", es: "Flip horizontal or vertical", pt: "Flip horizontal or vertical", fr: "Flip horizontal or vertical", de: "Flip horizontal or vertical" } },
+
+  { slug: "image/base64", category: "image", icon: "Code", name: { en: "Image to Base64", zh: "Image to Base64", ja: "Image to Base64", es: "Image to Base64", pt: "Image to Base64", fr: "Image to Base64", de: "Image to Base64" }, description: { en: "Convert image to Base64 data URL", zh: "Convert image to Base64 data URL", ja: "Convert image to Base64 data URL", es: "Convert image to Base64 data URL", pt: "Convert image to Base64 data URL", fr: "Convert image to Base64 data URL", de: "Convert image to Base64 data URL" } },
+
+  { slug: "image/exif", category: "image", icon: "Eraser", name: { en: "Remove EXIF", zh: "Remove EXIF", ja: "Remove EXIF", es: "Remove EXIF", pt: "Remove EXIF", fr: "Remove EXIF", de: "Remove EXIF" }, description: { en: "Strip EXIF metadata from photos", zh: "Strip EXIF metadata from photos", ja: "Strip EXIF metadata from photos", es: "Strip EXIF metadata from photos", pt: "Strip EXIF metadata from photos", fr: "Strip EXIF metadata from photos", de: "Strip EXIF metadata from photos" } },
+
+  { slug: "image/blur", category: "image", icon: "Droplet", name: { en: "Blur Image", zh: "Blur Image", ja: "Blur Image", es: "Blur Image", pt: "Blur Image", fr: "Blur Image", de: "Blur Image" }, description: { en: "Apply Gaussian blur to image", zh: "Apply Gaussian blur to image", ja: "Apply Gaussian blur to image", es: "Apply Gaussian blur to image", pt: "Apply Gaussian blur to image", fr: "Apply Gaussian blur to image", de: "Apply Gaussian blur to image" } },
+
+  { slug: "image/upscale", category: "image", icon: "ZoomIn", name: { en: "Upscale Image", zh: "Upscale Image", ja: "Upscale Image", es: "Upscale Image", pt: "Upscale Image", fr: "Upscale Image", de: "Upscale Image" }, description: { en: "Upscale image 2x with smoothing", zh: "Upscale image 2x with smoothing", ja: "Upscale image 2x with smoothing", es: "Upscale image 2x with smoothing", pt: "Upscale image 2x with smoothing", fr: "Upscale image 2x with smoothing", de: "Upscale image 2x with smoothing" } },
+
+  { slug: "image/meme", category: "image", icon: "Smile", name: { en: "Meme Generator", zh: "Meme Generator", ja: "Meme Generator", es: "Meme Generator", pt: "Meme Generator", fr: "Meme Generator", de: "Meme Generator" }, description: { en: "Add top/bottom text to image", zh: "Add top/bottom text to image", ja: "Add top/bottom text to image", es: "Add top/bottom text to image", pt: "Add top/bottom text to image", fr: "Add top/bottom text to image", de: "Add top/bottom text to image" } },
+
+  { slug: "text/reverse", category: "text", icon: "Undo2", name: { en: "Reverse Text", zh: "Reverse Text", ja: "Reverse Text", es: "Reverse Text", pt: "Reverse Text", fr: "Reverse Text", de: "Reverse Text" }, description: { en: "Reverse text character order", zh: "Reverse text character order", ja: "Reverse text character order", es: "Reverse text character order", pt: "Reverse text character order", fr: "Reverse text character order", de: "Reverse text character order" } },
+
+  { slug: "text/sort", category: "text", icon: "ArrowUpDown", name: { en: "Sort Lines", zh: "Sort Lines", ja: "Sort Lines", es: "Sort Lines", pt: "Sort Lines", fr: "Sort Lines", de: "Sort Lines" }, description: { en: "Sort lines alphabetically or numerically", zh: "Sort lines alphabetically or numerically", ja: "Sort lines alphabetically or numerically", es: "Sort lines alphabetically or numerically", pt: "Sort lines alphabetically or numerically", fr: "Sort lines alphabetically or numerically", de: "Sort lines alphabetically or numerically" } },
+
+  { slug: "text/lorem", category: "text", icon: "FileText", name: { en: "Lorem Ipsum", zh: "Lorem Ipsum", ja: "Lorem Ipsum", es: "Lorem Ipsum", pt: "Lorem Ipsum", fr: "Lorem Ipsum", de: "Lorem Ipsum" }, description: { en: "Generate placeholder text", zh: "Generate placeholder text", ja: "Generate placeholder text", es: "Generate placeholder text", pt: "Generate placeholder text", fr: "Generate placeholder text", de: "Generate placeholder text" } },
+
+  { slug: "text/markdown", category: "text", icon: "FileCode", name: { en: "Markdown Preview", zh: "Markdown Preview", ja: "Markdown Preview", es: "Markdown Preview", pt: "Markdown Preview", fr: "Markdown Preview", de: "Markdown Preview" }, description: { en: "Live markdown rendering", zh: "Live markdown rendering", ja: "Live markdown rendering", es: "Live markdown rendering", pt: "Live markdown rendering", fr: "Live markdown rendering", de: "Live markdown rendering" } },
+
+  { slug: "text/fancy", category: "text", icon: "Sparkles", name: { en: "Fancy Text", zh: "Fancy Text", ja: "Fancy Text", es: "Fancy Text", pt: "Fancy Text", fr: "Fancy Text", de: "Fancy Text" }, description: { en: "Unicode stylized text", zh: "Unicode stylized text", ja: "Unicode stylized text", es: "Unicode stylized text", pt: "Unicode stylized text", fr: "Unicode stylized text", de: "Unicode stylized text" } },
+
+  { slug: "text/rot13", category: "text", icon: "Lock", name: { en: "ROT13", zh: "ROT13", ja: "ROT13", es: "ROT13", pt: "ROT13", fr: "ROT13", de: "ROT13" }, description: { en: "ROT13 cipher encode/decode", zh: "ROT13 cipher encode/decode", ja: "ROT13 cipher encode/decode", es: "ROT13 cipher encode/decode", pt: "ROT13 cipher encode/decode", fr: "ROT13 cipher encode/decode", de: "ROT13 cipher encode/decode" } },
+
+  { slug: "unit/pressure", category: "unit", icon: "Gauge", name: { en: "Pressure Converter", zh: "Pressure Converter", ja: "Pressure Converter", es: "Pressure Converter", pt: "Pressure Converter", fr: "Pressure Converter", de: "Pressure Converter" }, description: { en: "Convert between Pa, bar, psi, atm", zh: "Convert between Pa, bar, psi, atm", ja: "Convert between Pa, bar, psi, atm", es: "Convert between Pa, bar, psi, atm", pt: "Convert between Pa, bar, psi, atm", fr: "Convert between Pa, bar, psi, atm", de: "Convert between Pa, bar, psi, atm" } },
+
+  { slug: "unit/energy", category: "unit", icon: "Zap", name: { en: "Energy Converter", zh: "Energy Converter", ja: "Energy Converter", es: "Energy Converter", pt: "Energy Converter", fr: "Energy Converter", de: "Energy Converter" }, description: { en: "Convert J, kJ, cal, kcal, Wh, kWh", zh: "Convert J, kJ, cal, kcal, Wh, kWh", ja: "Convert J, kJ, cal, kcal, Wh, kWh", es: "Convert J, kJ, cal, kcal, Wh, kWh", pt: "Convert J, kJ, cal, kcal, Wh, kWh", fr: "Convert J, kJ, cal, kcal, Wh, kWh", de: "Convert J, kJ, cal, kcal, Wh, kWh" } },
+
+  { slug: "unit/power", category: "unit", icon: "Power", name: { en: "Power Converter", zh: "Power Converter", ja: "Power Converter", es: "Power Converter", pt: "Power Converter", fr: "Power Converter", de: "Power Converter" }, description: { en: "Watt, kW, MW, HP conversions", zh: "Watt, kW, MW, HP conversions", ja: "Watt, kW, MW, HP conversions", es: "Watt, kW, MW, HP conversions", pt: "Watt, kW, MW, HP conversions", fr: "Watt, kW, MW, HP conversions", de: "Watt, kW, MW, HP conversions" } },
+
+  { slug: "unit/fuel", category: "unit", icon: "Fuel", name: { en: "Fuel Economy", zh: "Fuel Economy", ja: "Fuel Economy", es: "Fuel Economy", pt: "Fuel Economy", fr: "Fuel Economy", de: "Fuel Economy" }, description: { en: "MPG, L/100km, km/L", zh: "MPG, L/100km, km/L", ja: "MPG, L/100km, km/L", es: "MPG, L/100km, km/L", pt: "MPG, L/100km, km/L", fr: "MPG, L/100km, km/L", de: "MPG, L/100km, km/L" } },
+
+  { slug: "color/gradient", category: "color", icon: "PaintBucket", name: { en: "CSS Gradient", zh: "CSS Gradient", ja: "CSS Gradient", es: "CSS Gradient", pt: "CSS Gradient", fr: "CSS Gradient", de: "CSS Gradient" }, description: { en: "Visual CSS gradient generator", zh: "Visual CSS gradient generator", ja: "Visual CSS gradient generator", es: "Visual CSS gradient generator", pt: "Visual CSS gradient generator", fr: "Visual CSS gradient generator", de: "Visual CSS gradient generator" } },
+
+  { slug: "color/contrast", category: "color", icon: "Contrast", name: { en: "Contrast Checker", zh: "Contrast Checker", ja: "Contrast Checker", es: "Contrast Checker", pt: "Contrast Checker", fr: "Contrast Checker", de: "Contrast Checker" }, description: { en: "WCAG color contrast ratio", zh: "WCAG color contrast ratio", ja: "WCAG color contrast ratio", es: "WCAG color contrast ratio", pt: "WCAG color contrast ratio", fr: "WCAG color contrast ratio", de: "WCAG color contrast ratio" } },
+
+  { slug: "color/mixer", category: "color", icon: "Blend", name: { en: "Color Mixer", zh: "Color Mixer", ja: "Color Mixer", es: "Color Mixer", pt: "Color Mixer", fr: "Color Mixer", de: "Color Mixer" }, description: { en: "Mix two colors to get result", zh: "Mix two colors to get result", ja: "Mix two colors to get result", es: "Mix two colors to get result", pt: "Mix two colors to get result", fr: "Mix two colors to get result", de: "Mix two colors to get result" } },
+
+  { slug: "color/named", category: "color", icon: "Tag", name: { en: "Named Colors", zh: "Named Colors", ja: "Named Colors", es: "Named Colors", pt: "Named Colors", fr: "Named Colors", de: "Named Colors" }, description: { en: "Browse 140+ CSS named colors", zh: "Browse 140+ CSS named colors", ja: "Browse 140+ CSS named colors", es: "Browse 140+ CSS named colors", pt: "Browse 140+ CSS named colors", fr: "Browse 140+ CSS named colors", de: "Browse 140+ CSS named colors" } },
+
+  { slug: "crypto/jwt", category: "crypto", icon: "KeyRound", name: { en: "JWT Decoder", zh: "JWT Decoder", ja: "JWT Decoder", es: "JWT Decoder", pt: "JWT Decoder", fr: "JWT Decoder", de: "JWT Decoder" }, description: { en: "Decode JSON Web Tokens", zh: "Decode JSON Web Tokens", ja: "Decode JSON Web Tokens", es: "Decode JSON Web Tokens", pt: "Decode JSON Web Tokens", fr: "Decode JSON Web Tokens", de: "Decode JSON Web Tokens" } },
+
+  { slug: "crypto/hmac", category: "crypto", icon: "Fingerprint", name: { en: "HMAC Generator", zh: "HMAC Generator", ja: "HMAC Generator", es: "HMAC Generator", pt: "HMAC Generator", fr: "HMAC Generator", de: "HMAC Generator" }, description: { en: "Generate HMAC-SHA256 signatures", zh: "Generate HMAC-SHA256 signatures", ja: "Generate HMAC-SHA256 signatures", es: "Generate HMAC-SHA256 signatures", pt: "Generate HMAC-SHA256 signatures", fr: "Generate HMAC-SHA256 signatures", de: "Generate HMAC-SHA256 signatures" } },
+
+  { slug: "crypto/checksum", category: "crypto", icon: "FileLock2", name: { en: "File Checksum", zh: "File Checksum", ja: "File Checksum", es: "File Checksum", pt: "File Checksum", fr: "File Checksum", de: "File Checksum" }, description: { en: "Compute MD5/SHA-256 file hash", zh: "Compute MD5/SHA-256 file hash", ja: "Compute MD5/SHA-256 file hash", es: "Compute MD5/SHA-256 file hash", pt: "Compute MD5/SHA-256 file hash", fr: "Compute MD5/SHA-256 file hash", de: "Compute MD5/SHA-256 file hash" } },
+
+  { slug: "dev/yamlJson", category: "dev", icon: "FileJson", name: { en: "YAML ⇄ JSON", zh: "YAML ⇄ JSON", ja: "YAML ⇄ JSON", es: "YAML ⇄ JSON", pt: "YAML ⇄ JSON", fr: "YAML ⇄ JSON", de: "YAML ⇄ JSON" }, description: { en: "Convert between YAML and JSON", zh: "Convert between YAML and JSON", ja: "Convert between YAML and JSON", es: "Convert between YAML and JSON", pt: "Convert between YAML and JSON", fr: "Convert between YAML and JSON", de: "Convert between YAML and JSON" } },
+
+  { slug: "dev/csv", category: "dev", icon: "Table", name: { en: "CSV ⇄ JSON", zh: "CSV ⇄ JSON", ja: "CSV ⇄ JSON", es: "CSV ⇄ JSON", pt: "CSV ⇄ JSON", fr: "CSV ⇄ JSON", de: "CSV ⇄ JSON" }, description: { en: "Convert CSV to/from JSON", zh: "Convert CSV to/from JSON", ja: "Convert CSV to/from JSON", es: "Convert CSV to/from JSON", pt: "Convert CSV to/from JSON", fr: "Convert CSV to/from JSON", de: "Convert CSV to/from JSON" } },
+
+  { slug: "dev/sql", category: "dev", icon: "Database", name: { en: "SQL Formatter", zh: "SQL Formatter", ja: "SQL Formatter", es: "SQL Formatter", pt: "SQL Formatter", fr: "SQL Formatter", de: "SQL Formatter" }, description: { en: "Format and beautify SQL queries", zh: "Format and beautify SQL queries", ja: "Format and beautify SQL queries", es: "Format and beautify SQL queries", pt: "Format and beautify SQL queries", fr: "Format and beautify SQL queries", de: "Format and beautify SQL queries" } },
+
+  { slug: "dev/xml", category: "dev", icon: "FileCode2", name: { en: "XML Formatter", zh: "XML Formatter", ja: "XML Formatter", es: "XML Formatter", pt: "XML Formatter", fr: "XML Formatter", de: "XML Formatter" }, description: { en: "Format and validate XML", zh: "Format and validate XML", ja: "Format and validate XML", es: "Format and validate XML", pt: "Format and validate XML", fr: "Format and validate XML", de: "Format and validate XML" } },
 ];
 
 export const getToolsByCategory = (category: Tool["category"]) =>

@@ -45,6 +45,14 @@ export type Dictionary = {
       extractImages: string;
       extractText: string;
       reorder: string;
+      protect: string;
+      unlock: string;
+      pageNumbers: string;
+      sign: string;
+      metadata: string;
+      headerFooter: string;
+      compare: string;
+      cropPdf: string;
     };
     image: {
       compress: string;
@@ -52,6 +60,13 @@ export type Dictionary = {
       crop: string;
       convert: string;
       addWatermark: string;
+      rotate: string;
+      flip: string;
+      base64: string;
+      exif: string;
+      blur: string;
+      upscale: string;
+      meme: string;
     };
     text: {
       charCount: string;
@@ -59,6 +74,12 @@ export type Dictionary = {
       duplicate: string;
       diff: string;
       regex: string;
+      reverse: string;
+      sort: string;
+      lorem: string;
+      markdown: string;
+      fancy: string;
+      rot13: string;
     };
     unit: {
       length: string;
@@ -69,23 +90,38 @@ export type Dictionary = {
       speed: string;
       data: string;
       time: string;
+      pressure: string;
+      energy: string;
+      power: string;
+      fuel: string;
     };
     color: {
       picker: string;
       hexToRgb: string;
       palette: string;
+      gradient: string;
+      contrast: string;
+      mixer: string;
+      named: string;
     };
     crypto: {
       hash: string;
       base64: string;
       urlEncode: string;
       uuid: string;
+      jwt: string;
+      hmac: string;
+      checksum: string;
     };
     dev: {
       jsonFormat: string;
       timestamp: string;
       qrcode: string;
       password: string;
+      yamlJson: string;
+      csv: string;
+      sql: string;
+      xml: string;
     };
   };
   common: {

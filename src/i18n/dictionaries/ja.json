@@ -71,21 +71,42 @@
       "rotate": "PDF 回転",
       "extractImages": "画像抽出",
       "extractText": "テキスト抽出",
-      "reorder": "ページ並び替え"
+      "reorder": "ページ並び替え",
+      "protect": "PDF 保護",
+      "unlock": "PDF ロック解除",
+      "pageNumbers": "ページ番号を追加",
+      "sign": "PDF 署名",
+      "metadata": "メタデータ編集",
+      "headerFooter": "ヘッダー・フッター",
+      "compare": "PDF 比較",
+      "cropPdf": "PDF クロップ"
     },
     "image": {
       "compress": "画像圧縮",
       "resize": "リサイズ",
       "crop": "画像切り取り",
       "convert": "形式変換",
-      "addWatermark": "透かし追加"
+      "addWatermark": "透かし追加",
+      "rotate": "画像回転",
+      "flip": "画像反転",
+      "base64": "画像を Base64 に",
+      "exif": "EXIF 削除",
+      "blur": "画像ぼかし",
+      "upscale": "画像拡大",
+      "meme": "ミームジェネレーター"
     },
     "text": {
       "charCount": "文字数カウント",
       "caseConvert": "大文字小文字変換",
       "duplicate": "重複削除",
       "diff": "テキスト比較",
-      "regex": "正規表現テスター"
+      "regex": "正規表現テスター",
+      "reverse": "テキスト反転",
+      "sort": "行ソート",
+      "lorem": "Lorem Ipsum",
+      "markdown": "Markdown プレビュー",
+      "fancy": "ファンシーテキスト",
+      "rot13": "ROT13"
     },
     "unit": {
       "length": "長さ",
@@ -95,24 +116,39 @@
       "volume": "体積",
       "speed": "速度",
       "data": "データ容量",
-      "time": "時間"
+      "time": "時間",
+      "pressure": "圧力",
+      "energy": "エネルギー",
+      "power": "電力",
+      "fuel": "燃費"
     },
     "color": {
       "picker": "カラーピッカー",
       "hexToRgb": "HEX/RGB 変換",
-      "palette": "パレット生成"
+      "palette": "パレット生成",
+      "gradient": "CSS グラデーション",
+      "contrast": "コントラストチェック",
+      "mixer": "カラーミキサー",
+      "named": "名前付き色"
     },
     "crypto": {
       "hash": "ハッシュ生成",
       "base64": "Base64 エンコード/デコード",
       "urlEncode": "URL エンコード/デコード",
-      "uuid": "UUID 生成"
+      "uuid": "UUID 生成",
+      "jwt": "JWT デコーダー",
+      "hmac": "HMAC 生成",
+      "checksum": "ファイルチェックサム"
     },
     "dev": {
       "jsonFormat": "JSON フォーマッタ",
       "timestamp": "タイムスタンプ変換",
       "qrcode": "QR コード生成",
-      "password": "パスワード生成"
+      "password": "パスワード生成",
+      "yamlJson": "YAML ⇄ JSON",
+      "csv": "CSV ⇄ JSON",
+      "sql": "SQL フォーマッタ",
+      "xml": "XML フォーマッタ"
     }
   },
   "common": {

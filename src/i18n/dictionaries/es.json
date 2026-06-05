@@ -71,21 +71,42 @@
       "rotate": "Rotar PDF",
       "extractImages": "Extraer Imágenes",
       "extractText": "Extraer Texto",
-      "reorder": "Reordenar Páginas"
+      "reorder": "Reordenar Páginas",
+      "protect": "Proteger PDF",
+      "unlock": "Desbloquear PDF",
+      "pageNumbers": "Numerar páginas",
+      "sign": "Firmar PDF",
+      "metadata": "Editar metadatos",
+      "headerFooter": "Encabezado y pie",
+      "compare": "Comparar PDFs",
+      "cropPdf": "Recortar PDF"
     },
     "image": {
       "compress": "Comprimir Imagen",
       "resize": "Redimensionar",
       "crop": "Recortar",
       "convert": "Convertir Formato",
-      "addWatermark": "Marca de Agua"
+      "addWatermark": "Marca de Agua",
+      "rotate": "Rotar imagen",
+      "flip": "Voltear imagen",
+      "base64": "Imagen a Base64",
+      "exif": "Eliminar EXIF",
+      "blur": "Desenfocar imagen",
+      "upscale": "Aumentar imagen",
+      "meme": "Generador de memes"
     },
     "text": {
       "charCount": "Contar Caracteres",
       "caseConvert": "Convertir Mayúsculas",
       "duplicate": "Eliminar Duplicados",
       "diff": "Comparar Texto",
-      "regex": "Probador Regex"
+      "regex": "Probador Regex",
+      "reverse": "Invertir texto",
+      "sort": "Ordenar líneas",
+      "lorem": "Lorem Ipsum",
+      "markdown": "Vista previa Markdown",
+      "fancy": "Texto elegante",
+      "rot13": "ROT13"
     },
     "unit": {
       "length": "Longitud",
@@ -95,24 +116,39 @@
       "volume": "Volumen",
       "speed": "Velocidad",
       "data": "Almacenamiento",
-      "time": "Tiempo"
+      "time": "Tiempo",
+      "pressure": "Presión",
+      "energy": "Energía",
+      "power": "Potencia",
+      "fuel": "Combustible"
     },
     "color": {
       "picker": "Selector de Color",
       "hexToRgb": "Conversor HEX/RGB",
-      "palette": "Generador de Paleta"
+      "palette": "Generador de Paleta",
+      "gradient": "Gradiente CSS",
+      "contrast": "Verificador de contraste",
+      "mixer": "Mezclador de color",
+      "named": "Colores nombrados"
     },
     "crypto": {
       "hash": "Generador de Hash",
       "base64": "Codificar/Decodificar Base64",
       "urlEncode": "Codificar/Decodificar URL",
-      "uuid": "Generador UUID"
+      "uuid": "Generador UUID",
+      "jwt": "Decodificador JWT",
+      "hmac": "Generador HMAC",
+      "checksum": "Suma de verificación"
     },
     "dev": {
       "jsonFormat": "Formateador JSON",
       "timestamp": "Conversor Timestamp",
       "qrcode": "Generador QR",
-      "password": "Generador de Contraseña"
+      "password": "Generador de Contraseña",
+      "yamlJson": "YAML ⇄ JSON",
+      "csv": "CSV ⇄ JSON",
+      "sql": "Formateador SQL",
+      "xml": "Formateador XML"
     }
   },
   "common": {

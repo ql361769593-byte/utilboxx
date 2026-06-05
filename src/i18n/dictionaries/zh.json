@@ -71,21 +71,42 @@
       "rotate": "旋转 PDF",
       "extractImages": "提取图片",
       "extractText": "提取文本",
-      "reorder": "重排页面"
+      "reorder": "重排页面",
+      "protect": "PDF 加密",
+      "unlock": "PDF 解锁",
+      "pageNumbers": "添加页码",
+      "sign": "PDF 签名",
+      "metadata": "编辑元数据",
+      "headerFooter": "页眉页脚",
+      "compare": "PDF 对比",
+      "cropPdf": "PDF 裁剪"
     },
     "image": {
       "compress": "压缩图片",
       "resize": "调整大小",
       "crop": "裁剪图片",
       "convert": "转换格式",
-      "addWatermark": "添加水印"
+      "addWatermark": "添加水印",
+      "rotate": "图片旋转",
+      "flip": "图片翻转",
+      "base64": "图片转 Base64",
+      "exif": "移除 EXIF",
+      "blur": "图片模糊",
+      "upscale": "图片放大",
+      "meme": "表情包生成"
     },
     "text": {
       "charCount": "字符统计",
       "caseConvert": "大小写转换",
       "duplicate": "去除重复",
       "diff": "文本对比",
-      "regex": "正则测试"
+      "regex": "正则测试",
+      "reverse": "文字反转",
+      "sort": "行排序",
+      "lorem": "Lorem 文本",
+      "markdown": "Markdown 预览",
+      "fancy": "花体字",
+      "rot13": "ROT13"
     },
     "unit": {
       "length": "长度",
@@ -95,24 +116,39 @@
       "volume": "体积",
       "speed": "速度",
       "data": "数据存储",
-      "time": "时间"
+      "time": "时间",
+      "pressure": "压力",
+      "energy": "能量",
+      "power": "功率",
+      "fuel": "油耗"
     },
     "color": {
       "picker": "取色器",
       "hexToRgb": "HEX/RGB 转换",
-      "palette": "色板生成"
+      "palette": "色板生成",
+      "gradient": "CSS 渐变",
+      "contrast": "对比度检查",
+      "mixer": "颜色混合",
+      "named": "命名颜色"
     },
     "crypto": {
       "hash": "哈希生成",
       "base64": "Base64 编解码",
       "urlEncode": "URL 编解码",
-      "uuid": "UUID 生成"
+      "uuid": "UUID 生成",
+      "jwt": "JWT 解码",
+      "hmac": "HMAC 生成",
+      "checksum": "文件校验和"
     },
     "dev": {
       "jsonFormat": "JSON 格式化",
       "timestamp": "时间戳转换",
       "qrcode": "QR 码生成",
-      "password": "密码生成"
+      "password": "密码生成",
+      "yamlJson": "YAML ⇄ JSON",
+      "csv": "CSV ⇄ JSON",
+      "sql": "SQL 格式化",
+      "xml": "XML 格式化"
     }
   },
   "common": {
