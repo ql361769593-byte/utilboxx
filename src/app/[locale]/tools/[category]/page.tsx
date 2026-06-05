@@ -18,16 +18,19 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale; category: string };
 }): Promise<Metadata> {
+  const cat = params.category as (typeof categoryKeys)[number];
+  // 无效 category → 返回空 metadata（page 函数会抛 notFound()）
+  if (!categoryKeys.includes(cat)) return {};
   const dict = await getDictionary(params.locale);
-  const cat = dict.tools.category[params.category as keyof typeof dict.tools.category];
-  const count = getToolsByCategory(params.category as (typeof categoryKeys)[number]).length;
+  const catName = dict.tools.category[cat];
+  const count = getToolsByCategory(cat).length;
   return buildPageMetadata({
     locale: params.locale,
-    path: `tools/${params.category}`,
-    title: `${cat} - ${count} Free ${cat} Online | ${dict.site.title}`,
-    description: `${count} free ${cat.toLowerCase()} tools. No signup, runs in your browser, all ${cat.toLowerCase()} processing happens client-side for privacy.`,
+    path: `tools/${cat}`,
+    title: `${catName} - ${count} Free ${catName} Online | ${dict.site.title}`,
+    description: `${count} free ${cat} tools. No signup, runs in your browser, all ${cat} processing happens client-side for privacy.`,
     keywords: [
-      cat.toLowerCase(),
+      cat,
       "free",
       "online",
       "tools",
