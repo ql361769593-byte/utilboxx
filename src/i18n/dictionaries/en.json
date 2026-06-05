@@ -52,13 +52,34 @@
   },
   "tools": {
     "category": {
-      "pdf": "PDF Tools",
-      "image": "Image Tools",
-      "text": "Text Tools",
-      "unit": "Unit Converters",
-      "color": "Color Tools",
-      "crypto": "Crypto Tools",
-      "dev": "Developer Tools"
+      "pdf": {
+        "name": "PDF Tools",
+        "description": "Free PDF tools: merge, split, compress, convert. No signup, runs in your browser, all processing happens client-side for privacy."
+      },
+      "image": {
+        "name": "Image Tools",
+        "description": "Free image tools: compress, resize, convert, edit. No signup, runs in your browser, all processing happens client-side for privacy."
+      },
+      "text": {
+        "name": "Text Tools",
+        "description": "Free text tools: count, format, transform. No signup, runs in your browser, all processing happens client-side for privacy."
+      },
+      "unit": {
+        "name": "Unit Converters",
+        "description": "Free unit converters: length, weight, temperature, more. No signup, runs in your browser, all conversion happens client-side."
+      },
+      "color": {
+        "name": "Color Tools",
+        "description": "Free color tools: pick, convert, generate palettes. No signup, runs in your browser, all processing happens client-side for privacy."
+      },
+      "crypto": {
+        "name": "Crypto Tools",
+        "description": "Free crypto tools: hash, encode, generate UUIDs. No signup, runs in your browser, all processing happens client-side for privacy."
+      },
+      "dev": {
+        "name": "Developer Tools",
+        "description": "Free developer tools: JSON formatter, timestamp, QR code, password. No signup, runs in your browser, all processing happens client-side."
+      }
     },
     "relatedTools": "Related Tools",
     "pdf": {

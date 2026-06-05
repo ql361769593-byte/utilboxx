@@ -26,7 +26,15 @@ export const defaultDict: Dictionary = {
     ],
   },
   tools: {
-    category: { pdf: "PDF", image: "Image", text: "Text", unit: "Unit", color: "Color", crypto: "Crypto", dev: "Dev" },
+    category: {
+      pdf: { name: "PDF", description: "Free PDF tools. No signup, runs in your browser, all processing happens client-side for privacy." },
+      image: { name: "Image", description: "Free image tools. No signup, runs in your browser, all processing happens client-side for privacy." },
+      text: { name: "Text", description: "Free text tools. No signup, runs in your browser, all processing happens client-side for privacy." },
+      unit: { name: "Unit", description: "Free unit converters. No signup, runs in your browser, all conversion happens client-side." },
+      color: { name: "Color", description: "Free color tools. No signup, runs in your browser, all processing happens client-side for privacy." },
+      crypto: { name: "Crypto", description: "Free crypto tools. No signup, runs in your browser, all processing happens client-side for privacy." },
+      dev: { name: "Dev", description: "Free developer tools. No signup, runs in your browser, all processing happens client-side." },
+    },
     pdf: { merge: "Merge", split: "Split", compress: "Compress", toImage: "To Image", imageToPdf: "Image to PDF", addWatermark: "Watermark", rotate: "Rotate", extractImages: "Extract Images", extractText: "Extract Text", reorder: "Reorder", protect: "Protect", unlock: "Unlock", pageNumbers: "Page Numbers", sign: "Sign", metadata: "Metadata", headerFooter: "Header/Footer", compare: "Compare", cropPdf: "Crop PDF" },
     image: { compress: "Compress", resize: "Resize", crop: "Crop", convert: "Convert", addWatermark: "Watermark", rotate: "Rotate", flip: "Flip", base64: "Base64", exif: "Remove EXIF", blur: "Blur", upscale: "Upscale", meme: "Meme" },
     text: { charCount: "Char Count", caseConvert: "Case", duplicate: "Dedupe", diff: "Diff", regex: "Regex", reverse: "Reverse", sort: "Sort", lorem: "Lorem", markdown: "Markdown", fancy: "Fancy", rot13: "ROT13" },

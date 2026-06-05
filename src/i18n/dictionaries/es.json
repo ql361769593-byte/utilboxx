@@ -52,13 +52,34 @@
   },
   "tools": {
     "category": {
-      "pdf": "Herramientas PDF",
-      "image": "Herramientas de Imagen",
-      "text": "Herramientas de Texto",
-      "unit": "Conversores de Unidades",
-      "color": "Herramientas de Color",
-      "crypto": "Herramientas Cripto",
-      "dev": "Herramientas de Desarrollador"
+      "pdf": {
+        "name": "Herramientas PDF",
+        "description": "Herramientas PDF gratuitas: fusionar, dividir, comprimir, convertir. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente para privacidad."
+      },
+      "image": {
+        "name": "Herramientas de Imagen",
+        "description": "Herramientas de imagen gratuitas: comprimir, redimensionar, convertir, editar. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente para privacidad."
+      },
+      "text": {
+        "name": "Herramientas de Texto",
+        "description": "Herramientas de texto gratuitas: contar, formatear, transformar. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente para privacidad."
+      },
+      "unit": {
+        "name": "Conversores de Unidades",
+        "description": "Conversores de unidades gratuitos: longitud, peso, temperatura y más. Sin registro, funciona en tu navegador, todas las conversiones ocurren en el cliente."
+      },
+      "color": {
+        "name": "Herramientas de Color",
+        "description": "Herramientas de color gratuitas: seleccionar, convertir, generar paletas. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente para privacidad."
+      },
+      "crypto": {
+        "name": "Herramientas Cripto",
+        "description": "Herramientas criptográficas gratuitas: hash, codificar, generar UUIDs. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente para privacidad."
+      },
+      "dev": {
+        "name": "Herramientas de Desarrollador",
+        "description": "Herramientas de desarrollador gratuitas: formateador JSON, marca de tiempo, código QR, contraseña. Sin registro, funciona en tu navegador, todo el procesamiento ocurre en el cliente."
+      }
     },
     "relatedTools": "Herramientas relacionadas",
     "pdf": {

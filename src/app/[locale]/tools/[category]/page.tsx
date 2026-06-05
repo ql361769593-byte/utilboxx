@@ -22,13 +22,15 @@ export async function generateMetadata({
   // 无效 category → 返回空 metadata（page 函数会抛 notFound()）
   if (!categoryKeys.includes(cat)) return {};
   const dict = await getDictionary(params.locale);
-  const catName = dict.tools.category[cat];
+  const catInfo = dict.tools.category[cat];
+  const catName = catInfo.name;
+  const catDescription = catInfo.description;
   const count = getToolsByCategory(cat).length;
   return buildPageMetadata({
     locale: params.locale,
     path: `tools/${cat}`,
     title: `${catName} - ${count} Free ${catName} Online | ${dict.site.title}`,
-    description: `${count} free ${cat} tools. No signup, runs in your browser, all ${cat} processing happens client-side for privacy.`,
+    description: catDescription,
     keywords: [
       cat,
       "free",
@@ -50,7 +52,7 @@ export default async function CategoryPage({
   // 无效 category（如 /tools/nonexistent）应返回 404，不渲染空页
   if (!categoryKeys.includes(cat)) notFound();
   const catTools = getToolsByCategory(cat);
-  const catName = dict.tools.category[cat];
+  const catName = dict.tools.category[cat].name;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

@@ -52,13 +52,34 @@
   },
   "tools": {
     "category": {
-      "pdf": "Outils PDF",
-      "image": "Outils d'Image",
-      "text": "Outils de Texte",
-      "unit": "Convertisseurs d'Unités",
-      "color": "Outils de Couleur",
-      "crypto": "Outils Crypto",
-      "dev": "Outils Développeur"
+      "pdf": {
+        "name": "Outils PDF",
+        "description": "Outils PDF gratuits : fusionner, diviser, compresser, convertir. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client pour la confidentialité."
+      },
+      "image": {
+        "name": "Outils d'Image",
+        "description": "Outils d'image gratuits : compresser, redimensionner, convertir, éditer. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client pour la confidentialité."
+      },
+      "text": {
+        "name": "Outils de Texte",
+        "description": "Outils de texte gratuits : compter, formater, transformer. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client pour la confidentialité."
+      },
+      "unit": {
+        "name": "Convertisseurs d'Unités",
+        "description": "Convertisseurs d'unités gratuits : longueur, poids, température et plus. Sans inscription, fonctionne dans votre navigateur, toutes les conversions se font côté client."
+      },
+      "color": {
+        "name": "Outils de Couleur",
+        "description": "Outils de couleur gratuits : sélectionner, convertir, générer des palettes. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client pour la confidentialité."
+      },
+      "crypto": {
+        "name": "Outils Crypto",
+        "description": "Outils cryptographiques gratuits : hash, encoder, générer des UUIDs. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client pour la confidentialité."
+      },
+      "dev": {
+        "name": "Outils Développeur",
+        "description": "Outils développeur gratuits : formateur JSON, timestamp, code QR, mot de passe. Sans inscription, fonctionne dans votre navigateur, tout le traitement se fait côté client."
+      }
     },
     "relatedTools": "Outils associés",
     "pdf": {

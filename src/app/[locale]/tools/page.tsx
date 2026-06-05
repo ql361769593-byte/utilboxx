@@ -46,7 +46,7 @@ export default async function ToolsPage({ params }: { params: { locale: Locale }
               href={`/${params.locale}/tools/${c}`}
               className="px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-blue-300 transition"
             >
-              {dict.tools.category[c]} ({count})
+              {dict.tools.category[c].name} ({count})
             </Link>
           );
         })}
@@ -58,7 +58,7 @@ export default async function ToolsPage({ params }: { params: { locale: Locale }
           return (
             <div key={c}>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                {dict.tools.category[c]}
+                {dict.tools.category[c].name}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {catTools.map((tool) => (

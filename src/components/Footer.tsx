@@ -14,10 +14,10 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <div>
             <h3 className="text-white font-bold mb-3">{dict.nav.tools}</h3>
             <ul className="space-y-1 text-sm">
-              <li><Link href={`/${locale}/tools/pdf`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.pdf}</Link></li>
-              <li><Link href={`/${locale}/tools/image`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.image}</Link></li>
-              <li><Link href={`/${locale}/tools/text`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.text}</Link></li>
-              <li><Link href={`/${locale}/tools/unit`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.unit}</Link></li>
+              <li><Link href={`/${locale}/tools/pdf`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.pdf.name}</Link></li>
+              <li><Link href={`/${locale}/tools/image`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.image.name}</Link></li>
+              <li><Link href={`/${locale}/tools/text`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.text.name}</Link></li>
+              <li><Link href={`/${locale}/tools/unit`} className="text-slate-300 hover:text-white hover:underline underline-offset-2">{dict.tools.category.unit.name}</Link></li>
             </ul>
           </div>
           <div>

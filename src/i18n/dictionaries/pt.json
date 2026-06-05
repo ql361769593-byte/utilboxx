@@ -52,13 +52,34 @@
   },
   "tools": {
     "category": {
-      "pdf": "Ferramentas PDF",
-      "image": "Ferramentas de Imagem",
-      "text": "Ferramentas de Texto",
-      "unit": "Conversores de Unidades",
-      "color": "Ferramentas de Cor",
-      "crypto": "Ferramentas Cripto",
-      "dev": "Ferramentas de Desenvolvedor"
+      "pdf": {
+        "name": "Ferramentas PDF",
+        "description": "Ferramentas PDF gratuitas: mesclar, dividir, comprimir, converter. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente para privacidade."
+      },
+      "image": {
+        "name": "Ferramentas de Imagem",
+        "description": "Ferramentas de imagem gratuitas: comprimir, redimensionar, converter, editar. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente para privacidade."
+      },
+      "text": {
+        "name": "Ferramentas de Texto",
+        "description": "Ferramentas de texto gratuitas: contar, formatar, transformar. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente para privacidade."
+      },
+      "unit": {
+        "name": "Conversores de Unidades",
+        "description": "Conversores de unidades gratuitos: comprimento, peso, temperatura e mais. Sem cadastro, roda no seu navegador, todas as conversões acontecem no cliente."
+      },
+      "color": {
+        "name": "Ferramentas de Cor",
+        "description": "Ferramentas de cor gratuitas: selecionar, converter, gerar paletas. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente para privacidade."
+      },
+      "crypto": {
+        "name": "Ferramentas Cripto",
+        "description": "Ferramentas criptográficas gratuitas: hash, codificar, gerar UUIDs. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente para privacidade."
+      },
+      "dev": {
+        "name": "Ferramentas de Desenvolvedor",
+        "description": "Ferramentas de desenvolvedor gratuitas: formatador JSON, timestamp, código QR, senha. Sem cadastro, roda no seu navegador, todo o processamento acontece no cliente."
+      }
     },
     "relatedTools": "Ferramentas relacionadas",
     "pdf": {

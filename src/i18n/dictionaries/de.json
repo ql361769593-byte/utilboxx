@@ -52,13 +52,34 @@
   },
   "tools": {
     "category": {
-      "pdf": "PDF-Tools",
-      "image": "Bild-Tools",
-      "text": "Text-Tools",
-      "unit": "Einheitenumrechner",
-      "color": "Farb-Tools",
-      "crypto": "Krypto-Tools",
-      "dev": "Entwickler-Tools"
+      "pdf": {
+        "name": "PDF-Tools",
+        "description": "Kostenlose PDF-Tools: Zusammenführen, Teilen, Komprimieren, Konvertieren. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig für Datenschutz."
+      },
+      "image": {
+        "name": "Bild-Tools",
+        "description": "Kostenlose Bild-Tools: Komprimieren, Skalieren, Konvertieren, Bearbeiten. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig für Datenschutz."
+      },
+      "text": {
+        "name": "Text-Tools",
+        "description": "Kostenlose Text-Tools: Zählen, Formatieren, Transformieren. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig für Datenschutz."
+      },
+      "unit": {
+        "name": "Einheitenumrechner",
+        "description": "Kostenlose Einheitenumrechner: Länge, Gewicht, Temperatur und mehr. Keine Anmeldung, läuft in Ihrem Browser, alle Umrechnungen erfolgen clientseitig."
+      },
+      "color": {
+        "name": "Farb-Tools",
+        "description": "Kostenlose Farb-Tools: Auswählen, Konvertieren, Paletten generieren. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig für Datenschutz."
+      },
+      "crypto": {
+        "name": "Krypto-Tools",
+        "description": "Kostenlose Krypto-Tools: Hash, Kodieren, UUIDs generieren. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig für Datenschutz."
+      },
+      "dev": {
+        "name": "Entwickler-Tools",
+        "description": "Kostenlose Entwickler-Tools: JSON-Formatierer, Zeitstempel, QR-Code, Passwort. Keine Anmeldung, läuft in Ihrem Browser, alle Verarbeitung erfolgt clientseitig."
+      }
     },
     "relatedTools": "Verwandte Tools",
     "pdf": {

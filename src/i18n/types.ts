@@ -26,13 +26,13 @@ export type Dictionary = {
   };
   tools: {
     category: {
-      pdf: string;
-      image: string;
-      text: string;
-      unit: string;
-      color: string;
-      crypto: string;
-      dev: string;
+      pdf: { name: string; description: string };
+      image: { name: string; description: string };
+      text: { name: string; description: string };
+      unit: { name: string; description: string };
+      color: { name: string; description: string };
+      crypto: { name: string; description: string };
+      dev: { name: string; description: string };
     };
     pdf: {
       merge: string;

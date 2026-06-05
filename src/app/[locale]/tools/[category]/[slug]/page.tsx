@@ -24,14 +24,14 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale: params.locale,
     path: `tools/${params.category}/${params.slug}`,
-    title: `${name} - Free Online ${dict.tools.category[params.category as keyof typeof dict.tools.category]} | ${dict.site.title}`,
+    title: `${name} - Free Online ${dict.tools.category[params.category as keyof typeof dict.tools.category].name} | ${dict.site.title}`,
     description: `${description} Free, fast, no signup, runs in your browser.`,
     keywords: [
       name.toLowerCase(),
       "free",
       "online",
       ...tool.name[params.locale].toLowerCase().split(/\s+/),
-      ...dict.tools.category[params.category as keyof typeof dict.tools.category].toLowerCase().split(/\s+/),
+      ...dict.tools.category[params.category as keyof typeof dict.tools.category].name.toLowerCase().split(/\s+/),
     ],
   });
 }
@@ -47,7 +47,7 @@ export default async function ToolPage({
   const name = tool.name[params.locale];
   const description = tool.description[params.locale];
   const categoryName =
-    dict.tools.category[params.category as keyof typeof dict.tools.category];
+    dict.tools.category[params.category as keyof typeof dict.tools.category].name;
 
   const toolUrl = `https://utilboxx.com/${params.locale}/tools/${params.category}/${params.slug}`;
 
